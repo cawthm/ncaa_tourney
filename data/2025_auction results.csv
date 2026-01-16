@@ -1,0 +1,33 @@
+﻿Region,Team,Seed,sold_price
+West,Uconn,8,120
+West,Arkansas,7,210
+West,Mizzou,6,185
+West,Memphis,5,300
+West,Maryland,4,400
+West,Texas Tech,3,725
+West,St John's,2,820
+West,Florida,1,1700
+Midwest,Gonzaga,8,325
+Midwest,UCLA,7,250
+Midwest,Illinois,6,350
+Midwest,Clemson,5,350
+Midwest,Purdue,4,325
+Midwest,Kentucky,3,425
+Midwest,Tennessee,2,850
+Midwest,Houston,1,1950
+East,Baylor,8,200
+East,St Mary's,7,475
+East,BYU,6,550
+East,Oregon,5,350
+East,Arizona,4,475
+East,Wisconsin,3,550
+East,Alabama,2,800
+East,Duke,1,2100
+South,Louisville,8,350
+South,Marquette,7,400
+South,Ole Miss,6,525
+South,Michigan,5,700
+South,Texas A&M,4,625
+South,Iowa St,3,625
+South,Michigan St,2,1050
+South,Auburn,1,2000
