@@ -73,6 +73,8 @@ function buildRegionPanels() {
 }
 
 // Calculate adjusted EV based on team's barthag z-score
+// Uses additive adjustment: Adj EV = Base EV + (zScore × deltaPerSigma)
+// deltaPerSigma values are in percentage points from validated model
 function calculateAdjustedEV(region, matchup) {
     const teams = CONFIG.teams2025?.[region]?.[matchup.id];
     const baseEV = CONFIG.expectedValues[matchup.id];
@@ -82,10 +84,14 @@ function calculateAdjustedEV(region, matchup) {
     }
 
     const seed = teams.seed || matchup.highSeed;
-    const adjRate = CONFIG.adjustmentPerSigma?.[seed] || 0.20;
-    const multiplier = 1 + (adjRate * teams.zScore);
+    const delta = CONFIG.deltaPerSigma?.[seed] || 0.58;
 
-    return baseEV * multiplier;
+    // Additive adjustment in percentage points
+    // e.g., z=+1 for a 1-seed adds 1.74% to their EV
+    const adjustedEV = baseEV + (teams.zScore * delta);
+
+    // Floor at a small positive value (team still made tournament)
+    return Math.max(adjustedEV, 0.1);
 }
 
 // Create a matchup card
