@@ -21,7 +21,6 @@
     "1_16": 8.75
   },
   "historicalPriceRatios": {
-    "comment": "Ratio of average price to 8/9 matchup price (baseline = 1.0)",
     "8_9": 1.0,
     "7_10": 1.15,
     "6_11": 1.35,
@@ -31,47 +30,46 @@
     "2_15": 3.50,
     "1_16": 6.50
   },
-  "payoutStructure": {
-    "S16": 1.5,
-    "E8": 3.0,
-    "F4": 8.0,
-    "Championship": 20.0,
-    "Champion": 40.0
-  },
-  "seedEV": {
-    "1": 8.75,
-    "2": 4.73,
-    "3": 2.85,
-    "4": 2.30,
-    "5": 1.40,
-    "6": 1.19,
-    "7": 0.97,
-    "8": 0.67,
-    "9": 0.60,
-    "10": 0.51,
-    "11": 0.59,
-    "12": 0.32,
-    "13": 0.10,
-    "14": 0.08,
-    "15": 0.02,
-    "16": 0.002
-  },
-  "adjustmentPerSigma": {
-    "1": 0.20,
-    "2": 0.31,
-    "3": 0.41,
-    "4": 0.45,
-    "5": 0.62,
-    "6": 0.63,
-    "7": 0.72,
-    "8": 0.87,
-    "9": 0.96,
-    "10": 0.91,
-    "11": 0.79,
-    "12": 1.00,
-    "13": 1.00,
-    "14": 1.00,
-    "15": 1.00,
-    "16": 1.00
+  "teams2025": {
+    "East": {
+      "8_9": {"high": "Baylor", "low": "9-seed"},
+      "7_10": {"high": "St. Mary's", "low": "10-seed"},
+      "6_11": {"high": "BYU", "low": "11-seed"},
+      "5_12": {"high": "Oregon", "low": "12-seed"},
+      "4_13": {"high": "Arizona", "low": "13-seed"},
+      "3_14": {"high": "Wisconsin", "low": "14-seed"},
+      "2_15": {"high": "Alabama", "low": "15-seed"},
+      "1_16": {"high": "Duke", "low": "16-seed"}
+    },
+    "South": {
+      "8_9": {"high": "Louisville", "low": "9-seed"},
+      "7_10": {"high": "Marquette", "low": "10-seed"},
+      "6_11": {"high": "Ole Miss", "low": "11-seed"},
+      "5_12": {"high": "Michigan", "low": "12-seed"},
+      "4_13": {"high": "Texas A&M", "low": "13-seed"},
+      "3_14": {"high": "Iowa St", "low": "14-seed"},
+      "2_15": {"high": "Michigan St", "low": "15-seed"},
+      "1_16": {"high": "Auburn", "low": "16-seed"}
+    },
+    "West": {
+      "8_9": {"high": "UConn", "low": "9-seed"},
+      "7_10": {"high": "Arkansas", "low": "10-seed"},
+      "6_11": {"high": "Mizzou", "low": "11-seed"},
+      "5_12": {"high": "Memphis", "low": "12-seed"},
+      "4_13": {"high": "Maryland", "low": "13-seed"},
+      "3_14": {"high": "Texas Tech", "low": "14-seed"},
+      "2_15": {"high": "St. John's", "low": "15-seed"},
+      "1_16": {"high": "Florida", "low": "16-seed"}
+    },
+    "Midwest": {
+      "8_9": {"high": "Gonzaga", "low": "9-seed"},
+      "7_10": {"high": "UCLA", "low": "10-seed"},
+      "6_11": {"high": "Illinois", "low": "11-seed"},
+      "5_12": {"high": "Clemson", "low": "12-seed"},
+      "4_13": {"high": "Purdue", "low": "13-seed"},
+      "3_14": {"high": "Kentucky", "low": "14-seed"},
+      "2_15": {"high": "Tennessee", "low": "15-seed"},
+      "1_16": {"high": "Houston", "low": "16-seed"}
+    }
   }
 }

@@ -2,101 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NCAA Calcutta Auction Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>NCAA Calcutta Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>NCAA Calcutta Auction Tracker</h1>
-        <p class="subtitle">Live bidding assistant with EV calculations</p>
+    <!-- Sticky Header -->
+    <header id="header">
+        <div class="header-top">
+            <h1>Calcutta Tracker</h1>
+            <button id="menu-btn" class="icon-btn" aria-label="Menu">&#9776;</button>
+        </div>
+        <div class="header-stats">
+            <div class="stat">
+                <span class="stat-label">Sold</span>
+                <span id="items-sold" class="stat-value">0/32</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Pot</span>
+                <span id="current-pot" class="stat-value">$0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Budget</span>
+                <input type="number" id="budget-input" class="stat-input" value="2000">
+            </div>
+            <div class="stat">
+                <span class="stat-label">Left</span>
+                <span id="remaining" class="stat-value">$2,000</span>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <!-- Summary Panel -->
-        <section id="summary" class="panel">
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <span class="label">Items Sold</span>
-                    <span id="items-sold" class="value">0 / 32</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Current Pot</span>
-                    <span id="current-pot" class="value">$0</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Est. Final Pot</span>
-                    <span id="est-pot" class="value">$0</span>
-                </div>
-                <div class="summary-item budget">
-                    <span class="label">Your Budget</span>
-                    <input type="number" id="budget-input" placeholder="Enter budget" value="2000">
-                </div>
-                <div class="summary-item">
-                    <span class="label">Spent</span>
-                    <span id="spent" class="value">$0</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Remaining</span>
-                    <span id="remaining" class="value">$2,000</span>
-                </div>
-            </div>
-        </section>
+    <!-- Region Tabs -->
+    <nav id="region-tabs">
+        <button class="tab active" data-region="East">East</button>
+        <button class="tab" data-region="South">South</button>
+        <button class="tab" data-region="West">West</button>
+        <button class="tab" data-region="Midwest">Midwest</button>
+    </nav>
 
-        <!-- Bid Targets Panel -->
-        <section id="targets" class="panel">
-            <h2>Dynamic Bid Targets</h2>
-            <p class="hint">Based on estimated final pot of <span id="target-pot">$20,000</span></p>
-            <div class="targets-grid">
-                <div class="target-header">Matchup</div>
-                <div class="target-header">EV%</div>
-                <div class="target-header">Target</div>
-                <div class="target-header">Max (+20%)</div>
-                <!-- Filled by JS -->
-            </div>
-        </section>
-
-        <!-- Auction Grid -->
-        <section id="auction" class="panel">
-            <h2>Auction Grid</h2>
-            <p class="hint">Click cells to enter prices. Auction order: 8/9 &rarr; 7/10 &rarr; ... &rarr; 1/16</p>
-
-            <div class="auction-grid">
-                <div class="grid-header"></div>
-                <div class="grid-header region">East</div>
-                <div class="grid-header region">South</div>
-                <div class="grid-header region">West</div>
-                <div class="grid-header region">Midwest</div>
-                <!-- Rows filled by JS -->
-            </div>
-        </section>
-
-        <!-- Your Purchases -->
-        <section id="purchases" class="panel">
-            <h2>Your Purchases</h2>
-            <div id="purchases-list">
-                <p class="empty-msg">Mark items as "yours" by clicking the checkbox next to the price.</p>
-            </div>
-            <div class="purchases-summary">
-                <span>Total Spent: <strong id="your-total">$0</strong></span>
-                <span>Expected Payout: <strong id="your-ev">$0</strong></span>
-                <span>Expected ROI: <strong id="your-roi">0%</strong></span>
-            </div>
-        </section>
-
-        <!-- Controls -->
-        <section id="controls" class="panel">
-            <button id="clear-btn" class="btn btn-danger">Clear All</button>
-            <button id="export-btn" class="btn btn-secondary">Export Data</button>
-            <button id="import-btn" class="btn btn-secondary">Import Data</button>
-            <input type="file" id="import-file" accept=".json" style="display: none;">
-        </section>
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Region panels built by JS -->
     </main>
 
-    <footer>
-        <p>Built for NCAA Tournament Calcutta auctions. Uses 17 years of historical data (2008-2025).</p>
-        <p><a href="https://github.com/anthropics/claude-code" target="_blank">View on GitHub</a></p>
+    <!-- Sticky Footer - Projected Pot -->
+    <footer id="footer">
+        <div class="pot-projection">
+            <span id="pot-low" class="pot-bound">$18k</span>
+            <span id="pot-mid" class="pot-main">$20,000</span>
+            <span id="pot-high" class="pot-bound">$22k</span>
+        </div>
+        <div class="pot-label">Projected Final Pot</div>
     </footer>
+
+    <!-- Menu Overlay -->
+    <div id="menu-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <button id="close-menu" class="close-btn">&times;</button>
+            <h2>Options</h2>
+
+            <div class="menu-section">
+                <h3>Your Purchases</h3>
+                <div id="purchases-list">
+                    <p class="empty-msg">No purchases yet</p>
+                </div>
+                <div class="purchases-summary">
+                    <div>Spent: <strong id="your-total">$0</strong></div>
+                    <div>Exp. Payout: <strong id="your-ev">$0</strong></div>
+                    <div>ROI: <strong id="your-roi">0%</strong></div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Bid Targets</h3>
+                <p class="hint">Based on projected pot</p>
+                <div id="targets-list"></div>
+            </div>
+
+            <div class="menu-section">
+                <h3>Data</h3>
+                <div class="menu-buttons">
+                    <button id="clear-btn" class="btn btn-danger">Clear All</button>
+                    <button id="export-btn" class="btn">Export</button>
+                    <button id="import-btn" class="btn">Import</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
