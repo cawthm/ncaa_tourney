@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjusted Expected Value (Adj EV) Explainer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #2d3748;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px;
+            background: #f7fafc;
+        }
+
+        h1 {
+            color: #1a365d;
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+            border-bottom: 3px solid #ed8936;
+            padding-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            color: #2c5282;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h2 .num {
+            background: #1a365d;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        p { margin-bottom: 12px; }
+
+        .formula-box {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .formula {
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 8px;
+        }
+
+        .formula-desc {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 0.9rem;
+            color: #1a365d;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 12px 0;
+        }
+
+        th {
+            background: #1a365d;
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:nth-child(even) { background: #f8fafc; }
+
+        .example {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+
+        .example-title {
+            font-weight: 600;
+            color: #c05621;
+            margin-bottom: 8px;
+        }
+
+        .calc-step {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 4px 0;
+        }
+
+        .highlight {
+            background: #c6f6d5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .highlight-bad {
+            background: #fed7d7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .data-sources {
+            background: #ebf8ff;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .data-sources h3 {
+            color: #2b6cb0;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .data-sources ul {
+            margin-left: 20px;
+            font-size: 0.85rem;
+        }
+
+        .data-sources li {
+            margin: 4px 0;
+        }
+
+        .insight {
+            display: flex;
+            gap: 12px;
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0;
+            align-items: flex-start;
+        }
+
+        .insight-icon {
+            font-size: 1.5rem;
+        }
+
+        .insight-text {
+            font-size: 0.85rem;
+        }
+
+        .footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+        }
+
+        .viz {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .viz-box {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            text-align: center;
+        }
+
+        .viz-box.base { border-color: #4299e1; }
+        .viz-box.adjust { border-color: #ed8936; }
+        .viz-box.result { border-color: #48bb78; background: #f0fff4; }
+
+        .viz-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #718096;
+        }
+
+        .viz-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .viz-arrow {
+            font-size: 1.5rem;
+            color: #a0aec0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adjusted Expected Value (Adj EV)</h1>
+    <p class="subtitle">How we estimate what a team is really worth in a Calcutta auction</p>
+
+    <h2><span class="num">1</span> The Problem</h2>
+    <p>
+        In a Calcutta auction, you're buying <strong>matchup pairs</strong> (e.g., buying the 1-seed also gives you their 16-seed opponent).
+        But not all 1-seeds are equal&mdash;some are historically strong, others are weaker.
+        <strong>Adj EV</strong> accounts for this by adjusting the baseline expected value based on team quality.
+    </p>
+
+    <h2><span class="num">2</span> The Formula</h2>
+
+    <div class="formula-box">
+        <div class="formula">Adj EV = Base EV + (z-score &times; &Delta;)</div>
+        <div class="formula-desc">Additive adjustment in percentage points of the pot</div>
+    </div>
+
+    <div class="viz">
+        <div class="viz-box base">
+            <div class="viz-label">Base EV</div>
+            <div class="viz-value">8.75%</div>
+        </div>
+        <div class="viz-arrow">+</div>
+        <div class="viz-box adjust">
+            <div class="viz-label">z &times; &Delta;</div>
+            <div class="viz-value">+1.86%</div>
+        </div>
+        <div class="viz-arrow">=</div>
+        <div class="viz-box result">
+            <div class="viz-label">Adj EV</div>
+            <div class="viz-value">10.61%</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>&#x1F4CA; Base EV</h3>
+            <p>Historical average payout for each matchup type (1/16, 2/15, etc.) based on 17 years of tournament data.</p>
+        </div>
+        <div class="card">
+            <h3>&#x1F4CF; Z-Score</h3>
+            <p>How a team compares to others <em>of the same seed</em>. Calculated from Barthag (win probability vs. average team).</p>
+        </div>
+        <div class="card">
+            <h3>&#x1F4C8; Delta (&Delta;)</h3>
+            <p>Percentage points of EV change per standard deviation. Derived from cross-validated regression model.</p>
+        </div>
+        <div class="card">
+            <h3>&#x2696;&#xFE0F; Result</h3>
+            <p>Strong-for-seed teams get boosted EV; weak-for-seed teams get reduced EV. Total still sums to 100%.</p>
+        </div>
+    </div>
+
+    <h2><span class="num">3</span> Delta Values by Seed</h2>
+    <p>Lower seeds have higher deltas because being "strong for an 8-seed" matters more than being "strong for a 1-seed":</p>
+
+    <table>
+        <tr>
+            <th>Seed</th>
+            <th>Base EV</th>
+            <th>&Delta; per &sigma;</th>
+            <th>Interpretation</th>
+        </tr>
+        <tr>
+            <td><strong>1</strong></td>
+            <td>8.75%</td>
+            <td>1.74%</td>
+            <td>+1&sigma; team adds 1.74% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>2</strong></td>
+            <td>4.75%</td>
+            <td>1.45%</td>
+            <td>+1&sigma; team adds 1.45% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>3</strong></td>
+            <td>2.93%</td>
+            <td>1.16%</td>
+            <td>+1&sigma; team adds 1.16% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>4</strong></td>
+            <td>2.40%</td>
+            <td>1.05%</td>
+            <td>+1&sigma; team adds 1.05% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>5</strong></td>
+            <td>1.72%</td>
+            <td>0.87%</td>
+            <td>+1&sigma; team adds 0.87% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>6</strong></td>
+            <td>1.78%</td>
+            <td>0.76%</td>
+            <td>+1&sigma; team adds 0.76% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>7</strong></td>
+            <td>1.48%</td>
+            <td>0.70%</td>
+            <td>+1&sigma; team adds 0.70% to matchup EV</td>
+        </tr>
+        <tr>
+            <td><strong>8</strong></td>
+            <td>1.27%</td>
+            <td>0.58%</td>
+            <td>+1&sigma; team adds 0.58% to matchup EV</td>
+        </tr>
+    </table>
+
+    <h2><span class="num">4</span> Example Calculations</h2>
+
+    <div class="example">
+        <div class="example-title">Houston (1-seed, Midwest) &mdash; Strong for seed</div>
+        <p>Barthag: 0.9836 (highest among all 1-seeds)</p>
+        <div class="calc-step">z-score = <strong>+1.07</strong> (1.07 std devs above 1-seed average)</div>
+        <div class="calc-step">Adj EV = 8.75% + (1.07 &times; 1.74%) = <span class="highlight">10.61%</span></div>
+        <p style="margin-top: 8px; font-size: 0.85rem;">For a $20k pot: Base value $1,750 &rarr; Adj value <strong>$2,122</strong></p>
+    </div>
+
+    <div class="example">
+        <div class="example-title">Florida (1-seed, West) &mdash; Weak for seed</div>
+        <p>Barthag: 0.9709 (lowest among all 1-seeds)</p>
+        <div class="calc-step">z-score = <strong>-1.32</strong> (1.32 std devs below 1-seed average)</div>
+        <div class="calc-step">Adj EV = 8.75% + (-1.32 &times; 1.74%) = <span class="highlight-bad">6.45%</span></div>
+        <p style="margin-top: 8px; font-size: 0.85rem;">For a $20k pot: Base value $1,750 &rarr; Adj value <strong>$1,290</strong></p>
+    </div>
+
+    <div class="insight">
+        <div class="insight-icon">&#x26A0;&#xFE0F;</div>
+        <div class="insight-text">
+            <strong>Important caveat:</strong> In 2025, Florida (flagged as a "bad buy") won the championship!
+            Adj EV identifies expected value, but single tournaments have massive variance.
+            The model is probabilistic, not predictive.
+        </div>
+    </div>
+
+    <h2><span class="num">5</span> The Data Behind It</h2>
+
+    <div class="data-sources">
+        <h3>Data Sources & Methodology</h3>
+        <ul>
+            <li><strong>17 years</strong> of NCAA tournament results (2008-2025, excluding 2020)</li>
+            <li><strong>Barthag ratings</strong> from Barttorvik.com &mdash; a team's probability of beating an average D1 team on a neutral court</li>
+            <li><strong>Leave-one-year-out cross-validation</strong> to prevent overfitting</li>
+            <li><strong>R&sup2; = 0.47</strong> for predicting tournament wins from seed + within-seed strength</li>
+            <li>Barthag correlation with tournament wins: <strong>r = 0.376</strong> (strongest single predictor)</li>
+        </ul>
+    </div>
+
+    <div class="grid">
+        <div class="insight">
+            <div class="insight-icon">&#x2705;</div>
+            <div class="insight-text">
+                <strong>What it's good for:</strong> Identifying relative value between teams of the same seed across regions.
+            </div>
+        </div>
+        <div class="insight">
+            <div class="insight-icon">&#x274C;</div>
+            <div class="insight-text">
+                <strong>What it can't do:</strong> Predict upsets or account for matchup-specific factors (injuries, bracket position).
+            </div>
+        </div>
+    </div>
+
+    <h2><span class="num">6</span> Key Takeaways</h2>
+    <ul style="margin-left: 20px; font-size: 0.95rem;">
+        <li><strong>Z-scores sum to ~0 within each seed</strong>, so Adj EVs still total 100% of the pot</li>
+        <li><strong>Bigger adjustments for lower seeds</strong> &mdash; being a strong 8-seed matters more than being a strong 1-seed</li>
+        <li><strong>Use for relative comparisons</strong> &mdash; "Is Houston worth more than Duke?" rather than "Will Houston win?"</li>
+        <li><strong>Combine with auction dynamics</strong> &mdash; a "bad" team at a discount can still be a good buy</li>
+    </ul>
+
+    <div class="footer">
+        NCAA Calcutta Tracker &bull; Data: Barttorvik.com &bull; Model validated on 2008-2025 tournaments
+    </div>
+</body>
+</html>
