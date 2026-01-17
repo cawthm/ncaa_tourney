@@ -88,39 +88,74 @@ build_performance_model <- function(data, outcome_col = "wins") {
   model
 }
 
+#' Empirically validated EV adjustment rates by seed
+#' From cross-validation analysis in 07_validate_intra_seed.R
+#' Each σ of barthag adds ~0.58 tournament wins on average
+#' The EV impact per σ varies by seed due to different round values
+SEED_EV_ADJUSTMENT_PER_SIGMA <- c(
+  `1` = 0.20,   # 1-seeds: ~20% EV change per σ
+  `2` = 0.31,   # 2-seeds: ~31% EV change per σ
+  `3` = 0.41,   # 3-seeds: ~41% EV change per σ
+  `4` = 0.45,   # 4-seeds: ~45% EV change per σ
+  `5` = 0.62,   # 5-seeds: ~62% EV change per σ
+  `6` = 0.63,   # 6-seeds: ~63% EV change per σ
+  `7` = 0.72,   # 7-seeds: ~72% EV change per σ
+  `8` = 0.87,   # 8-seeds: ~87% EV change per σ
+  `9` = 0.96,   # 9-seeds: ~96% EV change per σ
+  `10` = 0.91,  # 10-seeds: ~91% EV change per σ
+  `11` = 0.79,  # 11-seeds: ~79% EV change per σ
+  `12` = 1.27,  # 12-seeds: ~127% EV change per σ (volatile)
+  `13` = 2.78,  # 13-seeds: high % but tiny base EV
+  `14` = 3.07,  # 14-seeds: high % but tiny base EV
+  `15` = 7.58,  # 15-seeds: extreme % but ~0% base EV
+  `16` = 52.26  # 16-seeds: extreme % but near-0 base EV
+)
+
 #' Calculate team adjustment multiplier
 #' Based on how much better/worse a team is than seed average
-get_team_adjustment <- function(team_data, model = NULL) {
+#' Uses empirically validated adjustments from cross-validation
+#' @param team_data Data frame with seed and z-score columns
+#' @param model Optional fitted model (for predicted wins approach)
+#' @param use_seed_specific If TRUE, use seed-specific adjustment rates
+get_team_adjustment <- function(team_data, model = NULL, use_seed_specific = TRUE) {
   # If we have a model, use it
   if (!is.null(model)) {
     # Predict expected wins based on model
     predicted <- predict(model, team_data)
     # Compare to seed baseline
-    # Adjustment = predicted / seed_expected
-    # This is simplified - in practice would be more nuanced
     return(predicted)
   }
 
-  # Simple adjustment based on efficiency z-score
-  # If no model, use adj_em_z or barthag_z as proxy
+  # Get z-score column (prefer barthag_z as most predictive)
   z_cols <- names(team_data)[grepl("_z$", names(team_data))]
 
   if (length(z_cols) == 0) {
     return(rep(1, nrow(team_data)))
   }
 
-  # Use first available z-score metric
-  z_col <- z_cols[1]
+  # Use barthag_z if available, otherwise first z-score
+  z_col <- if ("barthag_z" %in% z_cols) "barthag_z" else z_cols[1]
   z_scores <- team_data[[z_col]]
 
-  # Convert z-score to multiplier
-  # z = 0 -> multiplier = 1.0 (average for seed)
-  # z = 1 -> multiplier = 1.15 (15% better than seed average)
-  # z = -1 -> multiplier = 0.85 (15% worse than seed average)
-  multiplier <- 1 + (0.15 * z_scores)
+  if (use_seed_specific && "seed" %in% names(team_data)) {
+    # Use seed-specific adjustment rates (capped at reasonable levels)
+    # Cap adjustment rates at 100% to avoid extreme multipliers for low seeds
+    seeds <- as.character(team_data$seed)
+    adj_rates <- pmin(SEED_EV_ADJUSTMENT_PER_SIGMA[seeds], 1.0)
+    adj_rates[is.na(adj_rates)] <- 0.20  # Default to 20% if seed not found
+
+    # Convert z-score to multiplier using seed-specific rates
+    # z = 0 -> multiplier = 1.0 (average for seed)
+    # z = 1 -> multiplier = 1 + adj_rate (better than seed average)
+    multiplier <- 1 + (adj_rates * z_scores)
+  } else {
+    # Fallback: use flat 20% adjustment (conservative estimate)
+    # This is based on empirical finding of ~0.58 wins per σ
+    multiplier <- 1 + (0.20 * z_scores)
+  }
 
   # Bound between reasonable limits
-  pmin(pmax(multiplier, 0.7), 1.5)
+  pmin(pmax(multiplier, 0.5), 2.0)
 }
 
 #' Analyze which metrics are most predictive within seeds
