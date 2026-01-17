@@ -30,46 +30,56 @@
     "2_15": 3.50,
     "1_16": 6.50
   },
+  "adjustmentPerSigma": {
+    "1": 0.20,
+    "2": 0.31,
+    "3": 0.41,
+    "4": 0.45,
+    "5": 0.62,
+    "6": 0.63,
+    "7": 0.72,
+    "8": 0.87
+  },
   "teams2025": {
     "East": {
-      "8_9": {"high": "Baylor", "low": "9-seed"},
-      "7_10": {"high": "St. Mary's", "low": "10-seed"},
-      "6_11": {"high": "BYU", "low": "11-seed"},
-      "5_12": {"high": "Oregon", "low": "12-seed"},
-      "4_13": {"high": "Arizona", "low": "13-seed"},
-      "3_14": {"high": "Wisconsin", "low": "14-seed"},
-      "2_15": {"high": "Alabama", "low": "15-seed"},
-      "1_16": {"high": "Duke", "low": "16-seed"}
+      "8_9": {"high": "Baylor", "low": "9-seed", "seed": 8, "zScore": -0.3},
+      "7_10": {"high": "St. Mary's", "low": "10-seed", "seed": 7, "zScore": 0.4},
+      "6_11": {"high": "BYU", "low": "11-seed", "seed": 6, "zScore": -0.2},
+      "5_12": {"high": "Oregon", "low": "12-seed", "seed": 5, "zScore": 0.1},
+      "4_13": {"high": "Arizona", "low": "13-seed", "seed": 4, "zScore": 0.5},
+      "3_14": {"high": "Wisconsin", "low": "14-seed", "seed": 3, "zScore": -0.1},
+      "2_15": {"high": "Alabama", "low": "15-seed", "seed": 2, "zScore": 0.3},
+      "1_16": {"high": "Duke", "low": "16-seed", "seed": 1, "zScore": 0.8}
     },
     "South": {
-      "8_9": {"high": "Louisville", "low": "9-seed"},
-      "7_10": {"high": "Marquette", "low": "10-seed"},
-      "6_11": {"high": "Ole Miss", "low": "11-seed"},
-      "5_12": {"high": "Michigan", "low": "12-seed"},
-      "4_13": {"high": "Texas A&M", "low": "13-seed"},
-      "3_14": {"high": "Iowa St", "low": "14-seed"},
-      "2_15": {"high": "Michigan St", "low": "15-seed"},
-      "1_16": {"high": "Auburn", "low": "16-seed"}
+      "8_9": {"high": "Louisville", "low": "9-seed", "seed": 8, "zScore": -0.5},
+      "7_10": {"high": "Marquette", "low": "10-seed", "seed": 7, "zScore": 0.2},
+      "6_11": {"high": "Ole Miss", "low": "11-seed", "seed": 6, "zScore": -0.4},
+      "5_12": {"high": "Michigan", "low": "12-seed", "seed": 5, "zScore": -0.6},
+      "4_13": {"high": "Texas A&M", "low": "13-seed", "seed": 4, "zScore": 0.0},
+      "3_14": {"high": "Iowa St", "low": "14-seed", "seed": 3, "zScore": 0.6},
+      "2_15": {"high": "Michigan St", "low": "15-seed", "seed": 2, "zScore": -0.2},
+      "1_16": {"high": "Auburn", "low": "16-seed", "seed": 1, "zScore": 1.2}
     },
     "West": {
-      "8_9": {"high": "UConn", "low": "9-seed"},
-      "7_10": {"high": "Arkansas", "low": "10-seed"},
-      "6_11": {"high": "Mizzou", "low": "11-seed"},
-      "5_12": {"high": "Memphis", "low": "12-seed"},
-      "4_13": {"high": "Maryland", "low": "13-seed"},
-      "3_14": {"high": "Texas Tech", "low": "14-seed"},
-      "2_15": {"high": "St. John's", "low": "15-seed"},
-      "1_16": {"high": "Florida", "low": "16-seed"}
+      "8_9": {"high": "UConn", "low": "9-seed", "seed": 8, "zScore": 0.8},
+      "7_10": {"high": "Arkansas", "low": "10-seed", "seed": 7, "zScore": -0.3},
+      "6_11": {"high": "Mizzou", "low": "11-seed", "seed": 6, "zScore": -0.1},
+      "5_12": {"high": "Memphis", "low": "12-seed", "seed": 5, "zScore": 0.3},
+      "4_13": {"high": "Maryland", "low": "13-seed", "seed": 4, "zScore": -0.4},
+      "3_14": {"high": "Texas Tech", "low": "14-seed", "seed": 3, "zScore": 0.2},
+      "2_15": {"high": "St. John's", "low": "15-seed", "seed": 2, "zScore": 0.5},
+      "1_16": {"high": "Florida", "low": "16-seed", "seed": 1, "zScore": 1.5}
     },
     "Midwest": {
-      "8_9": {"high": "Gonzaga", "low": "9-seed"},
-      "7_10": {"high": "UCLA", "low": "10-seed"},
-      "6_11": {"high": "Illinois", "low": "11-seed"},
-      "5_12": {"high": "Clemson", "low": "12-seed"},
-      "4_13": {"high": "Purdue", "low": "13-seed"},
-      "3_14": {"high": "Kentucky", "low": "14-seed"},
-      "2_15": {"high": "Tennessee", "low": "15-seed"},
-      "1_16": {"high": "Houston", "low": "16-seed"}
+      "8_9": {"high": "Gonzaga", "low": "9-seed", "seed": 8, "zScore": 1.0},
+      "7_10": {"high": "UCLA", "low": "10-seed", "seed": 7, "zScore": 0.1},
+      "6_11": {"high": "Illinois", "low": "11-seed", "seed": 6, "zScore": 0.2},
+      "5_12": {"high": "Clemson", "low": "12-seed", "seed": 5, "zScore": -0.2},
+      "4_13": {"high": "Purdue", "low": "13-seed", "seed": 4, "zScore": 0.7},
+      "3_14": {"high": "Kentucky", "low": "14-seed", "seed": 3, "zScore": -0.3},
+      "2_15": {"high": "Tennessee", "low": "15-seed", "seed": 2, "zScore": 0.8},
+      "1_16": {"high": "Houston", "low": "16-seed", "seed": 1, "zScore": 1.8}
     }
   }
 }

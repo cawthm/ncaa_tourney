@@ -15,7 +15,7 @@
     --border: #e2e8f0;
 
     --header-height: 100px;
-    --tabs-height: 44px;
+    --tabs-height: 52px;
     --footer-height: 60px;
 
     --safe-top: env(safe-area-inset-top, 0px);
@@ -131,13 +131,13 @@ body {
     display: flex;
     background: var(--card-bg);
     border-bottom: 1px solid var(--border);
-    padding-top: var(--safe-top);
+    padding-top: 8px;
 }
 
 .tab {
     flex: 1;
-    padding: 12px 8px;
-    font-size: 0.9rem;
+    padding: 14px 8px;
+    font-size: 1rem;
     font-weight: 600;
     background: none;
     border: none;
@@ -200,9 +200,29 @@ body {
     font-weight: 700;
 }
 
+.matchup-evs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
 .matchup-ev {
-    font-size: 0.8rem;
-    opacity: 0.9;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.matchup-adj-ev {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.matchup-adj-ev.adj-up {
+    color: #9ae6b4;
+}
+
+.matchup-adj-ev.adj-down {
+    color: #feb2b2;
 }
 
 .matchup-teams {

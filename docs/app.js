@@ -72,6 +72,22 @@ function buildRegionPanels() {
     });
 }
 
+// Calculate adjusted EV based on team's barthag z-score
+function calculateAdjustedEV(region, matchup) {
+    const teams = CONFIG.teams2025?.[region]?.[matchup.id];
+    const baseEV = CONFIG.expectedValues[matchup.id];
+
+    if (!teams || teams.zScore === undefined) {
+        return baseEV;
+    }
+
+    const seed = teams.seed || matchup.highSeed;
+    const adjRate = CONFIG.adjustmentPerSigma?.[seed] || 0.20;
+    const multiplier = 1 + (adjRate * teams.zScore);
+
+    return baseEV * multiplier;
+}
+
 // Create a matchup card
 function createMatchupCard(region, matchup) {
     const card = document.createElement('div');
@@ -83,12 +99,20 @@ function createMatchupCard(region, matchup) {
     };
 
     const ev = CONFIG.expectedValues[matchup.id];
+    const adjEV = calculateAdjustedEV(region, matchup);
     const key = `${region}_${matchup.id}`;
+
+    // Format adjusted EV with color hint
+    const adjDiff = adjEV - ev;
+    const adjClass = adjDiff > 0.05 ? 'adj-up' : (adjDiff < -0.05 ? 'adj-down' : '');
 
     card.innerHTML = `
         <div class="matchup-header">
             <span class="matchup-label">${matchup.label}</span>
-            <span class="matchup-ev">EV: ${ev}%</span>
+            <div class="matchup-evs">
+                <span class="matchup-ev">EV: ${ev.toFixed(2)}%</span>
+                <span class="matchup-adj-ev ${adjClass}">Adj: ${adjEV.toFixed(2)}%</span>
+            </div>
         </div>
         <div class="matchup-teams">
             <div class="team-row">
