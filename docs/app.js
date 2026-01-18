@@ -72,26 +72,185 @@ function buildRegionPanels() {
     });
 }
 
-// Calculate adjusted EV based on team's barthag z-score
-// Uses additive adjustment: Adj EV = Base EV + (zScore × deltaPerSigma)
-// deltaPerSigma values are in percentage points from validated model
+// ============================================================
+// BRACKET-AWARE EV CALCULATION
+// Uses fitted logistic regression model with actual opponent
+// Barthag ratings to compute win probabilities through bracket
+// ============================================================
+
+// Convert Barthag to log-odds
+function barthagToLogOdds(barthag) {
+    barthag = Math.max(0.0001, Math.min(0.9999, barthag));
+    return Math.log(barthag / (1 - barthag));
+}
+
+// Calculate win probability using fitted model
+function calcWinProb(barthagA, barthagB, model) {
+    const logOddsDiff = barthagToLogOdds(barthagA) - barthagToLogOdds(barthagB);
+    const eta = model.intercept + model.coefficient * logOddsDiff;
+    return 1 / (1 + Math.exp(-eta));
+}
+
+// Get Barthag for a seed in a region (from full bracket data)
+function getRegionBarthag(region, seed) {
+    const bracket = CONFIG.bracket2025?.[region];
+    if (!bracket || !bracket[seed]) return getDefaultBarthag(seed);
+    return bracket[seed].barthag;
+}
+
+// Default Barthag values by seed (historical averages)
+function getDefaultBarthag(seed) {
+    const defaults = {
+        1: 0.96, 2: 0.93, 3: 0.91, 4: 0.88,
+        5: 0.86, 6: 0.83, 7: 0.80, 8: 0.78,
+        9: 0.76, 10: 0.74, 11: 0.72, 12: 0.70,
+        13: 0.68, 14: 0.65, 15: 0.62, 16: 0.55
+    };
+    return defaults[seed] || 0.75;
+}
+
+// R64 opponent by seed
+function getR64Opponent(seed) {
+    const opponents = {
+        1: 16, 2: 15, 3: 14, 4: 13, 5: 12, 6: 11, 7: 10, 8: 9,
+        9: 8, 10: 7, 11: 6, 12: 5, 13: 4, 14: 3, 15: 2, 16: 1
+    };
+    return opponents[seed];
+}
+
+// R32 matchup possibilities (who you could face)
+function getR32Opponents(seed) {
+    const matchups = {
+        1: [8, 9], 16: [8, 9], 8: [1, 16], 9: [1, 16],
+        4: [5, 12], 13: [5, 12], 5: [4, 13], 12: [4, 13],
+        3: [6, 11], 14: [6, 11], 6: [3, 14], 11: [3, 14],
+        2: [7, 10], 15: [7, 10], 7: [2, 15], 10: [2, 15]
+    };
+    return matchups[seed] || [];
+}
+
+// S16 opponents (from opposite side of bracket quarter)
+function getS16Opponents(seed) {
+    const pairings = {
+        1: [4, 5, 12, 13], 16: [4, 5, 12, 13], 8: [4, 5, 12, 13], 9: [4, 5, 12, 13],
+        4: [1, 8, 9, 16], 13: [1, 8, 9, 16], 5: [1, 8, 9, 16], 12: [1, 8, 9, 16],
+        2: [3, 6, 11, 14], 15: [3, 6, 11, 14], 7: [3, 6, 11, 14], 10: [3, 6, 11, 14],
+        3: [2, 7, 10, 15], 14: [2, 7, 10, 15], 6: [2, 7, 10, 15], 11: [2, 7, 10, 15]
+    };
+    return pairings[seed] || [];
+}
+
+// Calculate bracket-aware EV for a single team
+function calculateBracketEV(region, seed, barthag) {
+    const model = CONFIG.fittedModel || { intercept: 0, coefficient: 1 };
+    const PAYOUTS = { R32: 0.015, S16: 0.015, E8: 0.05, F4: 0.12, CHAMP: 0.20 };
+
+    // Helper to get opponent Barthag
+    const getOppBarthag = (oppSeed) => getRegionBarthag(region, oppSeed);
+
+    // R64: Known opponent
+    const r64Opp = getR64Opponent(seed);
+    const pR64 = calcWinProb(barthag, getOppBarthag(r64Opp), model);
+
+    // R32: Weighted by who advances
+    const r32Opps = getR32Opponents(seed);
+    if (r32Opps.length !== 2) return { probs: { R64: pR64 }, ev: 0 };
+
+    const opp1 = r32Opps[0];
+    const opp2 = r32Opps[1];
+    const opp1R64 = getR64Opponent(opp1);
+
+    const pOpp1Advances = calcWinProb(getOppBarthag(opp1), getOppBarthag(opp1R64), model);
+    const pBeatOpp1 = calcWinProb(barthag, getOppBarthag(opp1), model);
+    const pBeatOpp2 = calcWinProb(barthag, getOppBarthag(opp2), model);
+    const pR32 = pR64 * (pOpp1Advances * pBeatOpp1 + (1 - pOpp1Advances) * pBeatOpp2);
+
+    // S16: Weight by approximate advancement probabilities
+    const s16Opps = getS16Opponents(seed);
+    let s16WeightSum = 0;
+    let s16WinSum = 0;
+
+    s16Opps.forEach(oppSeed => {
+        // Approximate weight: higher seeds more likely to advance
+        const weight = Math.pow(0.9, oppSeed - 1);
+        s16WeightSum += weight;
+        s16WinSum += weight * calcWinProb(barthag, getOppBarthag(oppSeed), model);
+    });
+
+    const pS16 = pR32 * (s16WinSum / s16WeightSum);
+
+    // E8: Similar approach with other half of region
+    const e8Opps = seed <= 8 ? [2, 3, 6, 7, 10, 11, 14, 15] : [1, 4, 5, 8, 9, 12, 13, 16];
+    let e8WeightSum = 0;
+    let e8WinSum = 0;
+
+    e8Opps.forEach(oppSeed => {
+        const weight = Math.pow(0.85, oppSeed - 1);
+        e8WeightSum += weight;
+        e8WinSum += weight * calcWinProb(barthag, getOppBarthag(oppSeed), model);
+    });
+
+    const pE8 = pS16 * (e8WinSum / e8WeightSum);
+
+    // F4 and Championship: Use average strong opponent Barthag
+    const avgF4Opponent = 0.94;
+    const pF4 = pE8 * calcWinProb(barthag, avgF4Opponent, model);
+    const pChamp = pF4 * calcWinProb(barthag, avgF4Opponent, model);
+
+    // Calculate EV
+    const ev = pR64 * PAYOUTS.R32 +    // Reach S16
+               pR32 * PAYOUTS.S16 +    // Reach E8
+               pS16 * PAYOUTS.E8 +     // Reach F4
+               pE8 * PAYOUTS.F4 +      // Reach Final
+               pF4 * PAYOUTS.CHAMP;    // Win Championship
+
+    return {
+        probs: { R64: pR64, R32: pR32, S16: pS16, E8: pE8, F4: pF4, CHAMP: pChamp },
+        ev: ev * 100  // Convert to percentage
+    };
+}
+
+// Get pre-calculated adjusted EV for a matchup
+// Uses bracket-aware EVs computed by R model (see output/2025_team_adjusted_evs.csv)
 function calculateAdjustedEV(region, matchup) {
-    const teams = CONFIG.teams2025?.[region]?.[matchup.id];
+    const bracket = CONFIG.bracket2025?.[region];
     const baseEV = CONFIG.expectedValues[matchup.id];
 
-    if (!teams || teams.zScore === undefined) {
-        return baseEV;
+    if (!bracket) return baseEV;
+
+    // Get the high seed's pre-calculated adjEV (e.g., for 1/16 matchup, use 1-seed's EV)
+    const highSeed = bracket[matchup.highSeed];
+
+    if (highSeed?.adjEV !== undefined) {
+        return highSeed.adjEV;
     }
 
-    const seed = teams.seed || matchup.highSeed;
-    const delta = CONFIG.deltaPerSigma?.[seed] || 0.58;
+    // Fallback to base EV if no pre-calculated value
+    return baseEV;
+}
 
-    // Additive adjustment in percentage points
-    // e.g., z=+1 for a 1-seed adds 1.74% to their EV
-    const adjustedEV = baseEV + (teams.zScore * delta);
+// Get both seeds' EVs for display
+function getMatchupEVs(region, matchup) {
+    const bracket = CONFIG.bracket2025?.[region];
+    const baseEV = CONFIG.expectedValues[matchup.id];
 
-    // Floor at a small positive value (team still made tournament)
-    return Math.max(adjustedEV, 0.1);
+    if (!bracket) {
+        return { high: baseEV, low: 0, total: baseEV };
+    }
+
+    const highSeed = bracket[matchup.highSeed];
+    const lowSeed = bracket[matchup.lowSeed];
+
+    const highEV = highSeed?.adjEV ?? baseEV;
+    const lowEV = lowSeed?.adjEV ?? 0;
+
+    return {
+        high: highEV,
+        low: lowEV,
+        total: highEV + lowEV,
+        highNaive: highSeed?.naiveEV ?? baseEV,
+        lowNaive: lowSeed?.naiveEV ?? 0
+    };
 }
 
 // Create a matchup card
@@ -99,31 +258,36 @@ function createMatchupCard(region, matchup) {
     const card = document.createElement('div');
     card.className = 'matchup-card';
 
-    const teams = CONFIG.teams2025?.[region]?.[matchup.id] || {
-        high: `${matchup.highSeed}-seed`,
-        low: `${matchup.lowSeed}-seed`
-    };
+    // Get team info from bracket2025
+    const bracket = CONFIG.bracket2025?.[region];
+    const highTeam = bracket?.[matchup.highSeed] || { team: `${matchup.highSeed}-seed` };
+    const lowTeam = bracket?.[matchup.lowSeed] || { team: `${matchup.lowSeed}-seed` };
 
-    const ev = CONFIG.expectedValues[matchup.id];
-    const adjEV = calculateAdjustedEV(region, matchup);
+    const evs = getMatchupEVs(region, matchup);
+    const naiveEV = CONFIG.expectedValues[matchup.id];
     const key = `${region}_${matchup.id}`;
 
-    // Format adjusted EV with color hint
-    const adjDiff = adjEV - ev;
-    const adjClass = adjDiff > 0.05 ? 'adj-up' : (adjDiff < -0.05 ? 'adj-down' : '');
+    // Format adjusted EV with color based on difference from naive
+    const adjDiff = evs.high - naiveEV;
+    const adjClass = adjDiff > 0.5 ? 'adj-up' : (adjDiff < -0.5 ? 'adj-down' : '');
+
+    // Format the EV difference indicator
+    const diffStr = adjDiff > 0 ? `+${adjDiff.toFixed(1)}` : adjDiff.toFixed(1);
+    const diffDisplay = Math.abs(adjDiff) >= 0.1 ? `<span class="ev-diff ${adjClass}">(${diffStr})</span>` : '';
 
     card.innerHTML = `
         <div class="matchup-header">
             <span class="matchup-label">${matchup.label}</span>
             <div class="matchup-evs">
-                <span class="matchup-ev">EV: ${ev.toFixed(2)}%</span>
-                <span class="matchup-adj-ev ${adjClass}">Adj: ${adjEV.toFixed(2)}%</span>
+                <span class="matchup-ev" title="Naive seed EV">Base: ${naiveEV.toFixed(1)}%</span>
+                <span class="matchup-adj-ev ${adjClass}" title="Barthag-adjusted EV">Adj: ${evs.high.toFixed(1)}%</span>
+                ${diffDisplay}
             </div>
         </div>
         <div class="matchup-teams">
             <div class="team-row">
                 <span class="team-seed">${matchup.highSeed}</span>
-                <span class="team-name">${teams.high}</span>
+                <span class="team-name">${highTeam.team}</span>
                 <div class="team-input-group">
                     <input type="number" class="price-input"
                            data-key="${key}"

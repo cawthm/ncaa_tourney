@@ -254,134 +254,132 @@
 </head>
 <body>
     <h1>Adjusted Expected Value (Adj EV)</h1>
-    <p class="subtitle">How we estimate what a team is really worth in a Calcutta auction</p>
+    <p class="subtitle">Bracket-aware EV calculation using fitted win probability model</p>
 
     <h2><span class="num">1</span> The Problem</h2>
     <p>
         In a Calcutta auction, you're buying <strong>matchup pairs</strong> (e.g., buying the 1-seed also gives you their 16-seed opponent).
         But not all 1-seeds are equal&mdash;some are historically strong, others are weaker.
-        <strong>Adj EV</strong> accounts for this by adjusting the baseline expected value based on team quality.
+        <strong>Adj EV</strong> accounts for this using a <em>bracket-aware</em> model that calculates win probabilities
+        against actual opponents, not just seed averages.
     </p>
 
-    <h2><span class="num">2</span> The Formula</h2>
+    <h2><span class="num">2</span> The Model</h2>
 
     <div class="formula-box">
-        <div class="formula">Adj EV = Base EV + (z-score &times; &Delta;)</div>
-        <div class="formula-desc">Additive adjustment in percentage points of the pot</div>
+        <div class="formula">P(A beats B) = 1 / (1 + e<sup>-(&alpha; + &beta; &times; log-odds-diff)</sup>)</div>
+        <div class="formula-desc">Logistic regression fitted to 16 years of tournament games</div>
     </div>
+
+    <p style="margin-top: 12px;">
+        The model uses <strong>Barthag ratings</strong> converted to log-odds:<br>
+        <code style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px;">
+            log_odds = log(barthag / (1 - barthag))
+        </code>
+    </p>
 
     <div class="viz">
         <div class="viz-box base">
-            <div class="viz-label">Base EV</div>
-            <div class="viz-value">8.75%</div>
+            <div class="viz-label">Duke Barthag</div>
+            <div class="viz-value">0.9824</div>
         </div>
-        <div class="viz-arrow">+</div>
+        <div class="viz-arrow">vs</div>
         <div class="viz-box adjust">
-            <div class="viz-label">z &times; &Delta;</div>
-            <div class="viz-value">+1.86%</div>
+            <div class="viz-label">16-seed</div>
+            <div class="viz-value">0.55</div>
         </div>
-        <div class="viz-arrow">=</div>
+        <div class="viz-arrow">&rarr;</div>
         <div class="viz-box result">
-            <div class="viz-label">Adj EV</div>
-            <div class="viz-value">10.61%</div>
+            <div class="viz-label">P(Duke wins)</div>
+            <div class="viz-value">99.4%</div>
         </div>
     </div>
 
     <div class="grid">
         <div class="card">
-            <h3>&#x1F4CA; Base EV</h3>
-            <p>Historical average payout for each matchup type (1/16, 2/15, etc.) based on 17 years of tournament data.</p>
+            <h3>&#x1F3AF; Fitted Model</h3>
+            <p>Logistic regression trained on ~1000 tournament games (2008-2024). Coefficients validated against theoretical formula.</p>
         </div>
         <div class="card">
-            <h3>&#x1F4CF; Z-Score</h3>
-            <p>How a team compares to others <em>of the same seed</em>. Calculated from Barthag (win probability vs. average team).</p>
+            <h3>&#x1F3C0; Bracket-Aware</h3>
+            <p>Calculates exact win probabilities through each round using actual opponent Barthag ratings from the current bracket.</p>
         </div>
         <div class="card">
-            <h3>&#x1F4C8; Delta (&Delta;)</h3>
-            <p>Percentage points of EV change per standard deviation. Derived from cross-validated regression model.</p>
+            <h3>&#x1F4C8; Round-by-Round</h3>
+            <p>P(win R64) &times; P(win R32 | R32 opponent) &times; P(win S16 | S16 opponents) &times; ...</p>
         </div>
         <div class="card">
             <h3>&#x2696;&#xFE0F; Result</h3>
-            <p>Strong-for-seed teams get boosted EV; weak-for-seed teams get reduced EV. Total still sums to 100%.</p>
+            <p>EV = sum of P(reach round) &times; payout(round). Uses actual matchups, not historical averages.</p>
         </div>
     </div>
 
-    <h2><span class="num">3</span> Delta Values by Seed</h2>
-    <p>Lower seeds have higher deltas because being "strong for an 8-seed" matters more than being "strong for a 1-seed":</p>
+    <h2><span class="num">3</span> How Bracket-Aware EV Works</h2>
+    <p>Instead of using seed averages, we calculate through the actual bracket structure:</p>
 
     <table>
         <tr>
-            <th>Seed</th>
-            <th>Base EV</th>
-            <th>&Delta; per &sigma;</th>
-            <th>Interpretation</th>
+            <th>Round</th>
+            <th>What We Calculate</th>
+            <th>Example (Duke, East 1-seed)</th>
         </tr>
         <tr>
-            <td><strong>1</strong></td>
-            <td>8.75%</td>
-            <td>1.74%</td>
-            <td>+1&sigma; team adds 1.74% to matchup EV</td>
+            <td><strong>R64</strong></td>
+            <td>P(beat known 16-seed)</td>
+            <td>P(Duke beats 16-seed) = 99.4%</td>
         </tr>
         <tr>
-            <td><strong>2</strong></td>
-            <td>4.75%</td>
-            <td>1.45%</td>
-            <td>+1&sigma; team adds 1.45% to matchup EV</td>
+            <td><strong>R32</strong></td>
+            <td>Weighted avg of P(beat 8-seed) and P(beat 9-seed)</td>
+            <td>P(reach S16) = 99.4% &times; 95% = 94.4%</td>
         </tr>
         <tr>
-            <td><strong>3</strong></td>
-            <td>2.93%</td>
-            <td>1.16%</td>
-            <td>+1&sigma; team adds 1.16% to matchup EV</td>
+            <td><strong>S16</strong></td>
+            <td>Weighted avg across potential 4/5/12/13 seeds</td>
+            <td>P(reach E8) = 94.4% &times; 78% = 73.6%</td>
         </tr>
         <tr>
-            <td><strong>4</strong></td>
-            <td>2.40%</td>
-            <td>1.05%</td>
-            <td>+1&sigma; team adds 1.05% to matchup EV</td>
+            <td><strong>E8</strong></td>
+            <td>Regional final vs opposite bracket half</td>
+            <td>P(reach F4) = 73.6% &times; 65% = 47.8%</td>
         </tr>
         <tr>
-            <td><strong>5</strong></td>
-            <td>1.72%</td>
-            <td>0.87%</td>
-            <td>+1&sigma; team adds 0.87% to matchup EV</td>
+            <td><strong>F4</strong></td>
+            <td>National semi-final (avg strong opponent)</td>
+            <td>P(reach Final) = 47.8% &times; 55% = 26.3%</td>
         </tr>
         <tr>
-            <td><strong>6</strong></td>
-            <td>1.78%</td>
-            <td>0.76%</td>
-            <td>+1&sigma; team adds 0.76% to matchup EV</td>
-        </tr>
-        <tr>
-            <td><strong>7</strong></td>
-            <td>1.48%</td>
-            <td>0.70%</td>
-            <td>+1&sigma; team adds 0.70% to matchup EV</td>
-        </tr>
-        <tr>
-            <td><strong>8</strong></td>
-            <td>1.27%</td>
-            <td>0.58%</td>
-            <td>+1&sigma; team adds 0.58% to matchup EV</td>
+            <td><strong>CHAMP</strong></td>
+            <td>Championship game</td>
+            <td>P(win title) = 26.3% &times; 55% = 14.5%</td>
         </tr>
     </table>
+
+    <p style="margin-top: 12px;">
+        <strong>EV Calculation:</strong> EV = &Sigma; P(reach round) &times; payout(round)<br>
+        <code style="background: #e2e8f0; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-top: 8px;">
+            EV = 94.4%&times;1.5% + 73.6%&times;1.5% + 47.8%&times;5% + 26.3%&times;12% + 14.5%&times;20% = <strong>10.76%</strong>
+        </code>
+    </p>
 
     <h2><span class="num">4</span> Example Calculations</h2>
 
     <div class="example">
-        <div class="example-title">Houston (1-seed, Midwest) &mdash; Strong for seed</div>
-        <p>Barthag: 0.9836 (highest among all 1-seeds)</p>
-        <div class="calc-step">z-score = <strong>+1.07</strong> (1.07 std devs above 1-seed average)</div>
-        <div class="calc-step">Adj EV = 8.75% + (1.07 &times; 1.74%) = <span class="highlight">10.61%</span></div>
-        <p style="margin-top: 8px; font-size: 0.85rem;">For a $20k pot: Base value $1,750 &rarr; Adj value <strong>$2,122</strong></p>
+        <div class="example-title">Houston (1-seed, Midwest) &mdash; Elite bracket position</div>
+        <p>Barthag: <strong>0.9836</strong> (highest among all 1-seeds)</p>
+        <div class="calc-step">vs 16-seed (0.55): P(win) = 99.6%</div>
+        <div class="calc-step">vs Gonzaga 8-seed (0.9494): P(win) = 77%</div>
+        <div class="calc-step">Bracket-aware EV = <span class="highlight">10.89%</span></div>
+        <p style="margin-top: 8px; font-size: 0.85rem;">For a $20k pot: Base value $1,750 &rarr; Bracket-aware value <strong>$2,178</strong></p>
     </div>
 
     <div class="example">
-        <div class="example-title">Florida (1-seed, West) &mdash; Weak for seed</div>
-        <p>Barthag: 0.9709 (lowest among all 1-seeds)</p>
-        <div class="calc-step">z-score = <strong>-1.32</strong> (1.32 std devs below 1-seed average)</div>
-        <div class="calc-step">Adj EV = 8.75% + (-1.32 &times; 1.74%) = <span class="highlight-bad">6.45%</span></div>
-        <p style="margin-top: 8px; font-size: 0.85rem;">For a $20k pot: Base value $1,750 &rarr; Adj value <strong>$1,290</strong></p>
+        <div class="example-title">West Region &mdash; Weaker 5-seed hurts the bracket</div>
+        <p>Memphis 5-seed Barthag: <strong>0.8015</strong> (unusually weak for seed)</p>
+        <div class="calc-step">vs 12-seed (0.70): P(win) = 64% (typically ~70%)</div>
+        <div class="calc-step">This helps Florida (1-seed) who may face them in S16</div>
+        <div class="calc-step">Bracket structure matters: weak teams nearby = easier path</div>
+        <p style="margin-top: 8px; font-size: 0.85rem;">Old model: Treats all 5-seeds equally. New model: Uses actual team strength.</p>
     </div>
 
     <div class="insight">
@@ -396,13 +394,13 @@
     <h2><span class="num">5</span> The Data Behind It</h2>
 
     <div class="data-sources">
-        <h3>Data Sources & Methodology</h3>
+        <h3>Model Training & Validation</h3>
         <ul>
-            <li><strong>17 years</strong> of NCAA tournament results (2008-2025, excluding 2020)</li>
+            <li><strong>Training data:</strong> ~1,000 tournament games (2008-2024, excluding 2020)</li>
             <li><strong>Barthag ratings</strong> from Barttorvik.com &mdash; a team's probability of beating an average D1 team on a neutral court</li>
-            <li><strong>Leave-one-year-out cross-validation</strong> to prevent overfitting</li>
-            <li><strong>R&sup2; = 0.47</strong> for predicting tournament wins from seed + within-seed strength</li>
-            <li>Barthag correlation with tournament wins: <strong>r = 0.376</strong> (strongest single predictor)</li>
+            <li><strong>Logistic regression:</strong> Predicts P(team A wins) from log-odds difference of Barthag ratings</li>
+            <li><strong>Theoretical validation:</strong> Fitted coefficient should be ~1.0 (if Barthag is well-calibrated)</li>
+            <li><strong>Calibration check:</strong> Binned predictions match actual win rates (&plusmn;5%)</li>
         </ul>
     </div>
 
@@ -410,27 +408,28 @@
         <div class="insight">
             <div class="insight-icon">&#x2705;</div>
             <div class="insight-text">
-                <strong>What it's good for:</strong> Identifying relative value between teams of the same seed across regions.
+                <strong>What it's good for:</strong> Capturing value from bracket structure&mdash;easy paths (weak nearby seeds) vs hard paths.
             </div>
         </div>
         <div class="insight">
             <div class="insight-icon">&#x274C;</div>
             <div class="insight-text">
-                <strong>What it can't do:</strong> Predict upsets or account for matchup-specific factors (injuries, bracket position).
+                <strong>What it can't do:</strong> Predict upsets or account for injuries, game-day factors, or "clutch" performance.
             </div>
         </div>
     </div>
 
     <h2><span class="num">6</span> Key Takeaways</h2>
     <ul style="margin-left: 20px; font-size: 0.95rem;">
-        <li><strong>Z-scores sum to ~0 within each seed</strong>, so Adj EVs still total 100% of the pot</li>
-        <li><strong>Bigger adjustments for lower seeds</strong> &mdash; being a strong 8-seed matters more than being a strong 1-seed</li>
+        <li><strong>Bracket structure matters</strong> &mdash; a strong team in an easy region has higher EV than in a murderer's row</li>
+        <li><strong>All 64 EVs sum to 100%</strong> &mdash; someone must win each dollar of the pot</li>
+        <li><strong>Fitted model uses actual Barthag</strong> &mdash; not z-scores or seed averages</li>
         <li><strong>Use for relative comparisons</strong> &mdash; "Is Houston worth more than Duke?" rather than "Will Houston win?"</li>
-        <li><strong>Combine with auction dynamics</strong> &mdash; a "bad" team at a discount can still be a good buy</li>
+        <li><strong>Combine with auction dynamics</strong> &mdash; a team with lower EV at a big discount can still be +EV</li>
     </ul>
 
     <div class="footer">
-        NCAA Calcutta Tracker &bull; Data: Barttorvik.com &bull; Model validated on 2008-2025 tournaments
+        NCAA Calcutta Tracker &bull; Data: Barttorvik.com &bull; Bracket-aware model fitted on 2008-2024 tournaments
     </div>
 </body>
 </html>

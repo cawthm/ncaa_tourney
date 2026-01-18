@@ -1,0 +1,20 @@
+{
+  "n_observations": [8],
+  "barthag": {
+    "correlation": [0.9554],
+    "mse": [0.0013],
+    "rmse": [0.0367],
+    "mae": [0.0256]
+  },
+  "naive": {
+    "correlation": [0.8972],
+    "mse": [0.0024],
+    "rmse": [0.0492],
+    "mae": [0.0274]
+  },
+  "improvement": {
+    "correlation_diff": [0.0582],
+    "mse_reduction": [44.2604],
+    "mae_reduction": [6.4428]
+  }
+}

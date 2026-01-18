@@ -1,0 +1,2 @@
+round,n_games,brier_fitted,brier_theoretical,accuracy_fitted,accuracy_theoretical,avg_barthag_diff,brier_improvement
+R64,478,0.1648189685091006,0.16786725082131282,0.7635983263598326,0.7384937238493724,0.19022015062761508,0.003048282312212214

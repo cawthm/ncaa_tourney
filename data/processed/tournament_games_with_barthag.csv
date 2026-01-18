@@ -1,0 +1,479 @@
+year,round,team_a,team_b,seed_a,seed_b,barthag_a,barthag_b,p_a_wins_historical,winner_is_a,winner_binary,winner
+2008,R64,Kansas,Portland St.,1,16,0.982498,0.631123,0.993,0.993,1,Kansas
+2008,R64,Memphis,Mount St. Mary's,1,16,0.971452,0.467947,0.993,0.993,1,Memphis
+2008,R64,UCLA,UT Arlington,1,16,0.966392,0.419619,0.993,0.993,1,UCLA
+2008,R64,North Carolina,Coppin St.,1,16,0.965916,0.16949,0.993,0.993,1,North Carolina
+2008,R64,Duke,UMBC,2,15,0.948805,0.566558,0.935,0.935,1,Duke
+2008,R64,Texas,Belmont,2,15,0.947598,0.548665,0.935,0.935,1,Texas
+2008,R64,Georgetown,American,2,15,0.947187,0.520788,0.935,0.935,1,Georgetown
+2008,R64,Tennessee,Austin Peay,2,15,0.929015,0.482531,0.935,0.935,1,Tennessee
+2008,R64,Wisconsin,Georgia,3,14,0.959993,0.728125,0.85,0.85,1,Wisconsin
+2008,R64,Louisville,Cal St. Fullerton,3,14,0.951439,0.68791,0.85,0.85,1,Louisville
+2008,R64,Stanford,Cornell,3,14,0.932028,0.597309,0.85,0.85,1,Stanford
+2008,R64,Xavier,Boise St.,3,14,0.920537,0.592958,0.85,0.85,1,Xavier
+2008,R64,Washington St.,Oral Roberts,4,13,0.935891,0.74898,0.787,0.787,0,Oral Roberts
+2008,R64,Pittsburgh,Siena,4,13,0.901547,0.700836,0.787,0.787,1,Pittsburgh
+2008,R64,Connecticut,Winthrop,4,13,0.899225,0.660799,0.787,0.787,1,Connecticut
+2008,R64,Vanderbilt,San Diego,4,13,0.81754,0.66015,0.787,0.787,0,San Diego
+2008,R64,Clemson,Villanova,5,12,0.929922,0.838003,0.65,0.65,0,Villanova
+2008,R64,Michigan St.,Western Kentucky,5,12,0.920699,0.828326,0.65,0.65,1,Michigan St.
+2008,R64,Drake,Temple,5,12,0.908115,0.792785,0.65,0.65,1,Drake
+2008,R64,Notre Dame,George Mason,5,12,0.89571,0.738029,0.65,0.65,1,Notre Dame
+2008,R64,Marquette,Kansas St.,6,11,0.930447,0.911707,0.62,0.62,0,Kansas St.
+2008,R64,Purdue,Baylor,6,11,0.904704,0.850871,0.62,0.62,1,Purdue
+2008,R64,USC,Saint Joseph's,6,11,0.894514,0.827382,0.62,0.62,0,Saint Joseph's
+2008,R64,Oklahoma,Kentucky,6,11,0.835223,0.79202,0.62,0.62,0,Kentucky
+2008,R64,West Virginia,Davidson,7,10,0.913785,0.928696,0.605,0.605,1,West Virginia
+2008,R64,Gonzaga,Arizona,7,10,0.89687,0.899153,0.605,0.605,1,Gonzaga
+2008,R64,Butler,Saint Mary's,7,10,0.894635,0.839241,0.605,0.605,1,Butler
+2008,R64,Miami FL,South Alabama,7,10,0.861974,0.768567,0.605,0.605,0,South Alabama
+2008,R64,Indiana,Texas A&M,8,9,0.892641,0.915543,0.52,0.52,1,Indiana
+2008,R64,Mississippi St.,Arkansas,8,9,0.873414,0.861051,0.52,0.52,0,Arkansas
+2008,R64,BYU,Oregon,8,9,0.867497,0.849656,0.52,0.52,0,Oregon
+2008,R64,UNLV,Kent St.,8,9,0.843441,0.804361,0.52,0.52,0,Kent St.
+2009,R64,Connecticut,East Tennessee St.,1,16,0.96755,0.622114,0.993,0.993,1,Connecticut
+2009,R64,North Carolina,Morehead St.,1,16,0.967424,0.481621,0.993,0.993,1,North Carolina
+2009,R64,Louisville,Radford,1,16,0.957685,0.446346,0.993,0.993,1,Louisville
+2009,R64,Pittsburgh,Alabama St.,1,16,0.957074,0.401702,0.993,0.993,1,Pittsburgh
+2009,R64,Memphis,Cal St. Northridge,2,15,0.967966,0.653874,0.935,0.935,1,Memphis
+2009,R64,Michigan St.,Robert Morris,2,15,0.940211,0.551924,0.935,0.935,1,Michigan St.
+2009,R64,Duke,Morgan St.,2,15,0.938065,0.497829,0.935,0.935,1,Duke
+2009,R64,Oklahoma,Binghamton,2,15,0.936944,0.473152,0.935,0.935,1,Oklahoma
+2009,R64,Missouri,North Dakota St.,3,14,0.94745,0.764051,0.85,0.85,1,Missouri
+2009,R64,Kansas,Stephen F. Austin,3,14,0.940896,0.667592,0.85,0.85,1,Kansas
+2009,R64,Villanova,Cornell,3,14,0.936158,0.638076,0.85,0.85,1,Villanova
+2009,R64,Syracuse,American,3,14,0.933035,0.613875,0.85,0.85,0,American
+2009,R64,Gonzaga,Mississippi St.,4,13,0.938383,0.803657,0.787,0.787,1,Gonzaga
+2009,R64,Washington,Cleveland St.,4,13,0.926629,0.784047,0.787,0.787,0,Cleveland St.
+2009,R64,Xavier,Akron,4,13,0.903339,0.699473,0.787,0.787,0,Akron
+2009,R64,Wake Forest,Portland St.,4,13,0.893253,0.582472,0.787,0.787,1,Wake Forest
+2009,R64,Purdue,Wisconsin,5,12,0.927441,0.881254,0.65,0.65,0,Wisconsin
+2009,R64,Illinois,Arizona,5,12,0.897103,0.860972,0.65,0.65,1,Illinois
+2009,R64,Utah,Northern Iowa,5,12,0.877022,0.743797,0.65,0.65,1,Utah
+2009,R64,Florida St.,Western Kentucky,5,12,0.861227,0.704048,0.65,0.65,1,Florida St.
+2009,R64,UCLA,Temple,6,11,0.940623,0.825352,0.62,0.62,1,UCLA
+2009,R64,West Virginia,Utah St.,6,11,0.93997,0.818753,0.62,0.62,0,Utah St.
+2009,R64,Arizona St.,VCU,6,11,0.93153,0.816053,0.62,0.62,1,Arizona St.
+2009,R64,Marquette,Dayton,6,11,0.914741,0.766568,0.62,0.62,0,Dayton
+2009,R64,Clemson,USC,7,10,0.903261,0.899118,0.605,0.605,0,USC
+2009,R64,Texas,Michigan,7,10,0.902722,0.852793,0.605,0.605,1,Texas
+2009,R64,California,Minnesota,7,10,0.871236,0.848997,0.605,0.605,1,California
+2009,R64,Boston College,Maryland,7,10,0.801838,0.833895,0.605,0.605,1,Boston College
+2009,R64,BYU,Tennessee,8,9,0.90843,0.877425,0.52,0.52,0,Tennessee
+2009,R64,Oklahoma St.,Texas A&M,8,9,0.890407,0.852289,0.52,0.52,0,Texas A&M
+2009,R64,Ohio St.,Butler,8,9,0.868161,0.841239,0.52,0.52,0,Butler
+2009,R64,LSU,Siena,8,9,0.851069,0.792913,0.52,0.52,0,Siena
+2010,R64,Duke,Vermont,1,16,0.975221,0.555567,0.993,0.993,1,Duke
+2010,R64,Kansas,East Tennessee St.,1,16,0.966376,0.505375,0.993,0.993,1,Kansas
+2010,R64,Syracuse,Lehigh,1,16,0.955454,0.473764,0.993,0.993,1,Syracuse
+2010,R64,Kentucky,Winthrop,1,16,0.955274,0.311399,0.993,0.993,1,Kentucky
+2010,R64,Ohio St.,UC Santa Barbara,2,15,0.945412,0.596857,0.935,0.935,1,Ohio St.
+2010,R64,Kansas St.,Morgan St.,2,15,0.945052,0.49372,0.935,0.935,1,Kansas St.
+2010,R64,West Virginia,North Texas,2,15,0.942949,0.472098,0.935,0.935,1,West Virginia
+2010,R64,Villanova,Robert Morris,2,15,0.911202,0.462778,0.935,0.935,1,Villanova
+2010,R64,Baylor,Sam Houston St.,3,14,0.941129,0.713709,0.85,0.85,1,Baylor
+2010,R64,Georgetown,Ohio,3,14,0.912402,0.695836,0.85,0.85,1,Georgetown
+2010,R64,Pittsburgh,Montana,3,14,0.889734,0.618631,0.85,0.85,1,Pittsburgh
+2010,R64,New Mexico,Oakland,3,14,0.860617,0.580766,0.85,0.85,1,New Mexico
+2010,R64,Wisconsin,Siena,4,13,0.93943,0.797383,0.787,0.787,1,Wisconsin
+2010,R64,Purdue,Murray St.,4,13,0.931849,0.79444,0.787,0.787,1,Purdue
+2010,R64,Maryland,Wofford,4,13,0.91616,0.756184,0.787,0.787,1,Maryland
+2010,R64,Vanderbilt,Houston,4,13,0.87891300000000006,0.741424,0.787,0.787,1,Vanderbilt
+2010,R64,Texas A&M,Utah St.,5,12,0.922469,0.902138,0.65,0.65,1,Texas A&M
+2010,R64,Butler,UTEP,5,12,0.916302,0.888069,0.65,0.65,1,Butler
+2010,R64,Temple,Cornell,5,12,0.909115,0.845315,0.65,0.65,1,Temple
+2010,R64,Michigan St.,New Mexico St.,5,12,0.906255,0.648489,0.65,0.65,1,Michigan St.
+2010,R64,Xavier,Minnesota,6,11,0.910385,0.90364,0.62,0.62,0,Minnesota
+2010,R64,Marquette,Washington,6,11,0.905015,0.902316,0.62,0.62,1,Marquette
+2010,R64,Tennessee,Old Dominion,6,11,0.892839,0.876983,0.62,0.62,1,Tennessee
+2010,R64,Notre Dame,San Diego St.,6,11,0.890379,0.864025,0.62,0.62,1,Notre Dame
+2010,R64,BYU,Missouri,7,10,0.928755,0.910816,0.605,0.605,1,BYU
+2010,R64,Clemson,Georgia Tech,7,10,0.911256,0.895276,0.605,0.605,1,Clemson
+2010,R64,Oklahoma St.,Saint Mary's,7,10,0.900455,0.869337,0.605,0.605,0,Saint Mary's
+2010,R64,Richmond,Florida,7,10,0.854261,0.847099,0.605,0.605,1,Richmond
+2010,R64,California,Northern Iowa,8,9,0.921019,0.900698,0.52,0.52,1,California
+2010,R64,Texas,Florida St.,8,9,0.90908,0.894414,0.52,0.52,0,Florida St.
+2010,R64,UNLV,Louisville,8,9,0.890896,0.860765,0.52,0.52,0,Louisville
+2010,R64,Gonzaga,Wake Forest,8,9,0.879975,0.841798,0.52,0.52,0,Wake Forest
+2011,R64,Ohio St.,UNC Asheville,1,16,0.976933,0.486315,0.993,0.993,1,Ohio St.
+2011,R64,Kansas,Boston University,1,16,0.965751,0.466685,0.993,0.993,1,Kansas
+2011,R64,Duke,UTSA,1,16,0.963365,0.417214,0.993,0.993,1,Duke
+2011,R64,Pittsburgh,Arkansas Little Rock,1,16,0.946061,0.358786,0.993,0.993,1,Pittsburgh
+2011,R64,Notre Dame,Akron,2,15,0.936912,0.606451,0.935,0.935,1,Notre Dame
+2011,R64,San Diego St.,LIU Brooklyn,2,15,0.932606,0.590559,0.935,0.935,1,San Diego St.
+2011,R64,North Carolina,Northern Colorado,2,15,0.930156,0.588319,0.935,0.935,1,North Carolina
+2011,R64,Florida,UC Santa Barbara,2,15,0.913298,0.557904,0.935,0.935,1,Florida
+2011,R64,Purdue,Wofford,3,14,0.935826,0.724034,0.85,0.85,0,Wofford
+2011,R64,Connecticut,Indiana St.,3,14,0.926246,0.676891,0.85,0.85,0,Indiana St.
+2011,R64,Syracuse,Bucknell,3,14,0.923824,0.668094,0.85,0.85,1,Syracuse
+2011,R64,BYU,Saint Peter's,3,14,0.919695,0.583097,0.85,0.85,1,BYU
+2011,R64,Texas,Belmont,4,13,0.950078,0.868548,0.787,0.787,1,Texas
+2011,R64,Kentucky,Oakland,4,13,0.94792,0.791753,0.787,0.787,1,Kentucky
+2011,R64,Wisconsin,Princeton,4,13,0.939792,0.724009,0.787,0.787,1,Wisconsin
+2011,R64,Louisville,Morehead St.,4,13,0.923707,0.640539,0.787,0.787,0,Morehead St.
+2011,R64,West Virginia,Clemson,5,12,0.909867,0.900769,0.65,0.65,0,Clemson
+2011,R64,Arizona,Utah St.,5,12,0.907052,0.89716,0.65,0.65,1,Arizona
+2011,R64,Kansas St.,Richmond,5,12,0.903976,0.838294,0.65,0.65,1,Kansas St.
+2011,R64,Vanderbilt,UAB,5,12,0.874418,0.796496,0.65,0.65,1,Vanderbilt
+2011,R64,Cincinnati,Gonzaga,6,11,0.899749,0.878621,0.62,0.62,1,Cincinnati
+2011,R64,St. John's,Marquette,6,11,0.881051,0.877217,0.62,0.62,1,St. John's
+2011,R64,Georgetown,USC,6,11,0.864156,0.844243,0.62,0.62,1,Georgetown
+2011,R64,Xavier,Missouri,6,11,0.840219,0.842799,0.62,0.62,0,Missouri
+2011,R64,Washington,Florida St.,7,10,0.912665,0.876184,0.605,0.605,1,Washington
+2011,R64,Temple,Penn St.,7,10,0.859166,0.852169,0.605,0.605,1,Temple
+2011,R64,UCLA,Michigan St.,7,10,0.846255,0.845402,0.605,0.605,1,UCLA
+2011,R64,Texas A&M,Georgia,7,10,0.814679,0.827071,0.605,0.605,1,Texas A&M
+2011,R64,Michigan,Illinois,8,9,0.89071,0.929812,0.52,0.52,0,Illinois
+2011,R64,UNLV,Villanova,8,9,0.879774,0.872171,0.52,0.52,1,UNLV
+2011,R64,Butler,Tennessee,8,9,0.863562,0.837156,0.52,0.52,0,Tennessee
+2011,R64,George Mason,Old Dominion,8,9,0.849436,0.823706,0.52,0.52,0,Old Dominion
+2012,R64,Kentucky,UNC Asheville,1,16,0.975218,0.603369,0.993,0.993,1,Kentucky
+2012,R64,Michigan St.,Lamar,1,16,0.955429,0.594545,0.993,0.993,1,Michigan St.
+2012,R64,North Carolina,Vermont,1,16,0.951197,0.590992,0.993,0.993,1,North Carolina
+2012,R64,Syracuse,LIU Brooklyn,1,16,0.941736,0.52951,0.993,0.993,1,Syracuse
+2012,R64,Ohio St.,Lehigh,2,15,0.969384,0.714496,0.935,0.935,1,Ohio St.
+2012,R64,Kansas,Detroit,2,15,0.95264,0.628578,0.935,0.935,0,Detroit
+2012,R64,Missouri,Loyola MD,2,15,0.938443,0.590832,0.935,0.935,1,Missouri
+2012,R64,Duke,Norfolk St.,2,15,0.905106,0.445595,0.935,0.935,1,Duke
+2012,R64,Georgetown,Belmont,3,14,0.921215,0.852585,0.85,0.85,1,Georgetown
+2012,R64,Baylor,St. Bonaventure,3,14,0.912672,0.833562,0.85,0.85,1,Baylor
+2012,R64,Marquette,BYU,3,14,0.904281,0.78576,0.85,0.85,1,Marquette
+2012,R64,Florida St.,South Dakota St.,3,14,0.897833,0.779489,0.85,0.85,1,Florida St.
+2012,R64,Wisconsin,Ohio,4,13,0.940578,0.802142,0.787,0.787,1,Wisconsin
+2012,R64,Indiana,Davidson,4,13,0.923946,0.782045,0.787,0.787,1,Indiana
+2012,R64,Louisville,New Mexico St.,4,13,0.916377,0.733249,0.787,0.787,1,Louisville
+2012,R64,Michigan,Montana,4,13,0.892528,0.665009,0.787,0.787,1,Michigan
+2012,R64,Wichita St.,California,5,12,0.93031,0.8571,0.65,0.65,0,California
+2012,R64,Vanderbilt,VCU,5,12,0.921765,0.840949,0.65,0.65,0,VCU
+2012,R64,New Mexico,South Florida,5,12,0.903028,0.838001,0.65,0.65,1,New Mexico
+2012,R64,Temple,Harvard,5,12,0.863976,0.827242,0.65,0.65,0,Harvard
+2012,R64,Cincinnati,North Carolina St.,6,11,0.890109,0.852378,0.62,0.62,1,Cincinnati
+2012,R64,UNLV,Texas,6,11,0.863929,0.82753,0.62,0.62,1,UNLV
+2012,R64,Murray St.,Colorado,6,11,0.819571,0.776731,0.62,0.62,0,Colorado
+2012,R64,San Diego St.,Colorado St.,6,11,0.765827,0.721557,0.62,0.62,1,San Diego St.
+2012,R64,Florida,Purdue,7,10,0.929625,0.878844,0.605,0.605,0,Purdue
+2012,R64,Gonzaga,Virginia,7,10,0.886241,0.870239,0.605,0.605,1,Gonzaga
+2012,R64,Saint Mary's,West Virginia,7,10,0.80562,0.826137,0.605,0.605,0,West Virginia
+2012,R64,Notre Dame,Xavier,7,10,0.804452,0.797549,0.605,0.605,0,Xavier
+2012,R64,Memphis,Saint Louis,8,9,0.919939,0.919932,0.52,0.52,1,Memphis
+2012,R64,Iowa St.,Alabama,8,9,0.875187,0.871999,0.52,0.52,1,Iowa St.
+2012,R64,Kansas St.,Connecticut,8,9,0.871014,0.845694,0.52,0.52,1,Kansas St.
+2012,R64,Creighton,Southern Miss,8,9,0.84149,0.764547,0.52,0.52,0,Southern Miss
+2013,R64,Louisville,Western Kentucky,1,16,0.974259,0.489457,0.993,0.993,1,Louisville
+2013,R64,Indiana,Southern,1,16,0.969155,0.474974,0.993,0.993,1,Indiana
+2013,R64,Gonzaga,James Madison,1,16,0.959866,0.473628,0.993,0.993,1,Gonzaga
+2013,R64,Kansas,LIU Brooklyn,1,16,0.951384,0.419507,0.993,0.993,1,Kansas
+2013,R64,Duke,Iona,2,15,0.950737,0.695552,0.935,0.935,1,Duke
+2013,R64,Ohio St.,Florida Gulf Coast,2,15,0.940578,0.695229,0.935,0.935,1,Ohio St.
+2013,R64,Georgetown,Pacific,2,15,0.938128,0.599129,0.935,0.935,1,Georgetown
+2013,R64,Miami FL,Albany,2,15,0.920655,0.572175,0.935,0.935,1,Miami FL
+2013,R64,Florida,Davidson,3,14,0.969444,0.795908,0.85,0.85,1,Florida
+2013,R64,Michigan St.,Valparaiso,3,14,0.939247,0.751357,0.85,0.85,1,Michigan St.
+2013,R64,Marquette,Harvard,3,14,0.902016,0.6362,0.85,0.85,1,Marquette
+2013,R64,New Mexico,Northwestern St.,3,14,0.864064,0.572958,0.85,0.85,1,New Mexico
+2013,R64,Syracuse,La Salle,4,13,0.953261,0.851628,0.787,0.787,1,Syracuse
+2013,R64,Michigan,Boise St.,4,13,0.952155,0.833191,0.787,0.787,1,Michigan
+2013,R64,Saint Louis,New Mexico St.,4,13,0.918147,0.699228,0.787,0.787,1,Saint Louis
+2013,R64,Kansas St.,South Dakota St.,4,13,0.889585,0.657253,0.787,0.787,1,Kansas St.
+2013,R64,Wisconsin,Oregon,5,12,0.940553,0.872774,0.65,0.65,0,Oregon
+2013,R64,VCU,Mississippi,5,12,0.919496,0.834039,0.65,0.65,1,VCU
+2013,R64,Oklahoma St.,California,5,12,0.898321,0.821065,0.65,0.65,0,California
+2013,R64,UNLV,Akron,5,12,0.874928,0.740246,0.65,0.65,0,Akron
+2013,R64,Arizona,Minnesota,6,11,0.922884,0.905034,0.62,0.62,0,Minnesota
+2013,R64,Memphis,Saint Mary's,6,11,0.86724,0.890975,0.62,0.62,0,Saint Mary's
+2013,R64,Butler,Middle Tennessee,6,11,0.862443,0.839631,0.62,0.62,1,Butler
+2013,R64,UCLA,Belmont,6,11,0.847549,0.806444,0.62,0.62,1,UCLA
+2013,R64,Creighton,Iowa St.,7,10,0.911704,0.882839,0.605,0.605,0,Iowa St.
+2013,R64,San Diego St.,Cincinnati,7,10,0.875232,0.873019,0.605,0.605,0,Cincinnati
+2013,R64,Illinois,Colorado,7,10,0.874937,0.851277,0.605,0.605,0,Colorado
+2013,R64,Notre Dame,Oklahoma,7,10,0.874792,0.8391,0.605,0.605,0,Oklahoma
+2013,R64,Pittsburgh,Wichita St.,8,9,0.921657,0.904514,0.52,0.52,1,Pittsburgh
+2013,R64,North Carolina,Missouri,8,9,0.890162,0.881507,0.52,0.52,1,North Carolina
+2013,R64,Colorado St.,Villanova,8,9,0.875901,0.850688,0.52,0.52,1,Colorado St.
+2013,R64,North Carolina St.,Temple,8,9,0.865014,0.821986,0.52,0.52,0,Temple
+2014,R64,Arizona,Albany,1,16,0.963574,0.489995,0.993,0.993,1,Arizona
+2014,R64,Florida,Weber St.,1,16,0.957514,0.483104,0.993,0.993,1,Florida
+2014,R64,Virginia,Cal Poly,1,16,0.944922,0.435559,0.993,0.993,1,Virginia
+2014,R64,Wichita St.,Mount St. Mary's,1,16,0.929451,0.398562,0.993,0.993,1,Wichita St.
+2014,R64,Wisconsin,American,2,15,0.944055,0.617838,0.935,0.935,1,Wisconsin
+2014,R64,Michigan,Eastern Kentucky,2,15,0.929499,0.617717,0.935,0.935,1,Michigan
+2014,R64,Kansas,Milwaukee,2,15,0.926975,0.51225,0.935,0.935,1,Kansas
+2014,R64,Villanova,Wofford,2,15,0.925979,0.427455,0.935,0.935,1,Villanova
+2014,R64,Duke,North Carolina Central,3,14,0.943151,0.701782,0.85,0.85,0,North Carolina Central
+2014,R64,Syracuse,Mercer,3,14,0.915628,0.699256,0.85,0.85,1,Syracuse
+2014,R64,Creighton,Louisiana Lafayette,3,14,0.914367,0.655661,0.85,0.85,0,Louisiana Lafayette
+2014,R64,Iowa St.,Western Michigan,3,14,0.890344,0.560534,0.85,0.85,1,Iowa St.
+2014,R64,Louisville,Tulsa,4,13,0.971034,0.753738,0.787,0.787,1,Louisville
+2014,R64,Michigan St.,Manhattan,4,13,0.931921,0.751858,0.787,0.787,1,Michigan St.
+2014,R64,UCLA,New Mexico St.,4,13,0.916657,0.738488,0.787,0.787,0,New Mexico St.
+2014,R64,San Diego St.,Delaware,4,13,0.896049,0.623685,0.787,0.787,1,San Diego St.
+2014,R64,VCU,Harvard,5,12,0.895523,0.864096,0.65,0.65,1,VCU
+2014,R64,Oklahoma,North Carolina St.,5,12,0.879267,0.806604,0.65,0.65,1,Oklahoma
+2014,R64,Cincinnati,Xavier,5,12,0.878319,0.796451,0.65,0.65,1,Cincinnati
+2014,R64,Saint Louis,North Dakota St.,5,12,0.847736,0.761286,0.65,0.65,1,Saint Louis
+2014,R64,Ohio St.,Tennessee,6,11,0.910736,0.937371,0.62,0.62,1,Ohio St.
+2014,R64,Baylor,Iowa,6,11,0.888511,0.908895,0.62,0.62,1,Baylor
+2014,R64,North Carolina,Providence,6,11,0.888298,0.824942,0.62,0.62,1,North Carolina
+2014,R64,Massachusetts,Dayton,6,11,0.795213,0.818785,0.62,0.62,0,Dayton
+2014,R64,Connecticut,Stanford,7,10,0.917125,0.843637,0.605,0.605,1,Connecticut
+2014,R64,Oregon,Arizona St.,7,10,0.871963,0.8252,0.605,0.605,1,Oregon
+2014,R64,New Mexico,BYU,7,10,0.869327,0.807846,0.605,0.605,1,New Mexico
+2014,R64,Gonzaga,Pittsburgh,8,9,0.906371,0.926085,0.52,0.52,0,Pittsburgh
+2014,R64,Kentucky,Oklahoma St.,8,9,0.906163,0.906728,0.52,0.52,1,Kentucky
+2014,R64,Memphis,Kansas St.,8,9,0.847947,0.847321,0.52,0.52,1,Memphis
+2014,R64,Colorado,George Washington,8,9,0.774045,0.815057,0.52,0.52,0,George Washington
+2015,R64,Kentucky,Coastal Carolina,1,16,0.984165,0.541744,0.993,0.993,1,Kentucky
+2015,R64,Duke,Manhattan,1,16,0.976397,0.523846,0.993,0.993,1,Duke
+2015,R64,Wisconsin,North Florida,1,16,0.975832,0.506282,0.993,0.993,1,Wisconsin
+2015,R64,Villanova,Robert Morris,1,16,0.966255,0.42864,0.993,0.993,1,Villanova
+2015,R64,Arizona,New Mexico St.,2,15,0.969953,0.661306,0.935,0.935,1,Arizona
+2015,R64,Virginia,Belmont,2,15,0.964753,0.549674,0.935,0.935,1,Virginia
+2015,R64,Gonzaga,North Dakota St.,2,15,0.9498,0.503462,0.935,0.935,1,Gonzaga
+2015,R64,Kansas,Texas Southern,2,15,0.930781,0.337116,0.935,0.935,1,Kansas
+2015,R64,Notre Dame,Georgia St.,3,14,0.940114,0.780152,0.85,0.85,1,Notre Dame
+2015,R64,Oklahoma,Northeastern,3,14,0.93493,0.658605,0.85,0.85,1,Oklahoma
+2015,R64,Baylor,Albany,3,14,0.931557,0.574854,0.85,0.85,1,Baylor
+2015,R64,Iowa St.,UAB,3,14,0.910332,0.572051,0.85,0.85,0,UAB
+2015,R64,North Carolina,Valparaiso,4,13,0.95068,0.770606,0.787,0.787,0,Valparaiso
+2015,R64,Louisville,UC Irvine,4,13,0.929033,0.72017,0.787,0.787,1,Louisville
+2015,R64,Georgetown,Harvard,4,13,0.894518,0.705718,0.787,0.787,0,Harvard
+2015,R64,Maryland,Eastern Washington,4,13,0.861858,0.564752,0.787,0.787,1,Maryland
+2015,R64,Utah,Stephen F. Austin,5,12,0.951278,0.791893,0.65,0.65,1,Utah
+2015,R64,Northern Iowa,Buffalo,5,12,0.922848,0.77417,0.65,0.65,1,Northern Iowa
+2015,R64,West Virginia,Wofford,5,12,0.873282,0.654652,0.65,0.65,1,West Virginia
+2015,R64,Arkansas,Wyoming,5,12,0.869585,0.612077,0.65,0.65,1,Arkansas
+2015,R64,Butler,Texas,6,11,0.911519,0.9048,0.62,0.62,1,Butler
+2015,R64,Xavier,BYU,6,11,0.904944,0.86992,0.62,0.62,1,Xavier
+2015,R64,Providence,UCLA,6,11,0.882092,0.842494,0.62,0.62,1,Providence
+2015,R64,SMU,Boise St.,6,11,0.863544,0.820996,0.62,0.62,1,SMU
+2015,R64,Michigan St.,Ohio St.,7,10,0.932674,0.910439,0.605,0.605,1,Michigan St.
+2015,R64,Wichita St.,Georgia,7,10,0.927706,0.84822,0.605,0.605,1,Wichita St.
+2015,R64,Iowa,Indiana,7,10,0.921066,0.847323,0.605,0.605,0,Indiana
+2015,R64,VCU,Davidson,7,10,0.837336,0.843533,0.605,0.605,1,VCU
+2015,R64,San Diego St.,Purdue,8,9,0.869058,0.865433,0.52,0.52,1,San Diego St.
+2015,R64,North Carolina St.,St. John's,8,9,0.868418,0.856865,0.52,0.52,1,North Carolina St.
+2015,R64,Cincinnati,LSU,8,9,0.837954,0.847655,0.52,0.52,0,LSU
+2015,R64,Oregon,Oklahoma St.,8,9,0.837899,0.846912,0.52,0.52,1,Oregon
+2016,R64,Kansas,Florida Gulf Coast,1,16,0.966188,0.513593,0.993,0.993,1,Kansas
+2016,R64,Virginia,Austin Peay,1,16,0.960005,0.350145,0.993,0.993,1,Virginia
+2016,R64,North Carolina,Southern,1,16,0.953144,0.306515,0.993,0.993,1,North Carolina
+2016,R64,Oregon,Hampton,1,16,0.916324,0.261523,0.993,0.993,1,Oregon
+2016,R64,Villanova,Cal St. Bakersfield,2,15,0.970287,0.710613,0.935,0.935,1,Villanova
+2016,R64,Michigan St.,Middle Tennessee,2,15,0.94283,0.622432,0.935,0.935,1,Michigan St.
+2016,R64,Oklahoma,Weber St.,2,15,0.932643,0.559917,0.935,0.935,1,Oklahoma
+2016,R64,Xavier,UNC Asheville,2,15,0.922949,0.548685,0.935,0.935,1,Xavier
+2016,R64,West Virginia,Stephen F. Austin,3,14,0.939593,0.823457,0.85,0.85,0,Stephen F. Austin
+2016,R64,Miami FL,Iona,3,14,0.920301,0.682187,0.85,0.85,1,Miami FL
+2016,R64,Texas A&M,Fresno St.,3,14,0.912643,0.664607,0.85,0.85,1,Texas A&M
+2016,R64,Utah,Buffalo,3,14,0.880728,0.574612,0.85,0.85,0,Buffalo
+2016,R64,Kentucky,Hawaii,4,13,0.951703,0.794457,0.787,0.787,1,Kentucky
+2016,R64,Iowa St.,UNC Wilmington,4,13,0.916194,0.718592,0.787,0.787,0,UNC Wilmington
+2016,R64,Duke,Stony Brook,4,13,0.91222,0.64802,0.787,0.787,0,Stony Brook
+2016,R64,Purdue,Yale,5,12,0.93155,0.82089,0.65,0.65,1,Purdue
+2016,R64,Indiana,Arkansas Little Rock,5,12,0.91684,0.773247,0.65,0.65,0,Arkansas Little Rock
+2016,R64,Baylor,South Dakota St.,5,12,0.89237,0.736977,0.65,0.65,1,Baylor
+2016,R64,Maryland,Chattanooga,5,12,0.883859,0.62859,0.65,0.65,1,Maryland
+2016,R64,Arizona,Wichita St.,6,11,0.902179,0.932131,0.62,0.62,0,Wichita St.
+2016,R64,Seton Hall,Gonzaga,6,11,0.901365,0.923771,0.62,0.62,1,Seton Hall
+2016,R64,Texas,Vanderbilt,6,11,0.862703,0.914845,0.62,0.62,1,Texas
+2016,R64,Notre Dame,Michigan,6,11,0.82687,0.819955,0.62,0.62,1,Notre Dame
+2016,R64,Iowa,Syracuse,7,10,0.88533,0.885657,0.605,0.605,1,Iowa
+2016,R64,Wisconsin,VCU,7,10,0.850889,0.881059,0.605,0.605,1,Wisconsin
+2016,R64,Dayton,Pittsburgh,7,10,0.818356,0.865933,0.605,0.605,1,Dayton
+2016,R64,Oregon St.,Temple,7,10,0.788036,0.731814,0.605,0.605,1,Oregon St.
+2016,R64,Saint Joseph's,Butler,8,9,0.860006,0.88985,0.52,0.52,1,Saint Joseph's
+2016,R64,USC,Connecticut,8,9,0.835221,0.873152,0.52,0.52,0,Connecticut
+2016,R64,Texas Tech,Cincinnati,8,9,0.822685,0.866027,0.52,0.52,1,Texas Tech
+2016,R64,Colorado,Providence,8,9,0.807181,0.819276,0.52,0.52,1,Colorado
+2017,R64,Gonzaga,North Carolina Central,1,16,0.972764,0.504348,0.993,0.993,1,Gonzaga
+2017,R64,North Carolina,South Dakota St.,1,16,0.961477,0.461169,0.993,0.993,1,North Carolina
+2017,R64,Villanova,New Orleans,1,16,0.961112,0.453794,0.993,0.993,1,Villanova
+2017,R64,Kansas,Mount St. Mary's,1,16,0.947213,0.415509,0.993,0.993,1,Kansas
+2017,R64,Kentucky,Troy,2,15,0.951658,0.559615,0.935,0.935,1,Kentucky
+2017,R64,Louisville,Northern Kentucky,2,15,0.946942,0.536979,0.935,0.935,1,Louisville
+2017,R64,Duke,North Dakota,2,15,0.943609,0.511213,0.935,0.935,1,Duke
+2017,R64,Arizona,Jacksonville St.,2,15,0.915664,0.505443,0.935,0.935,1,Arizona
+2017,R64,Oregon,New Mexico St.,3,14,0.93214,0.678263,0.85,0.85,1,Oregon
+2017,R64,Baylor,Florida Gulf Coast,3,14,0.922589,0.616911,0.85,0.85,1,Baylor
+2017,R64,UCLA,Iona,3,14,0.917532,0.587937,0.85,0.85,1,UCLA
+2017,R64,Florida St.,Kent St.,3,14,0.901418,0.532241,0.85,0.85,1,Florida St.
+2017,R64,Florida,Vermont,4,13,0.957626,0.786354,0.787,0.787,1,Florida
+2017,R64,West Virginia,East Tennessee St.,4,13,0.949801,0.759475,0.787,0.787,1,West Virginia
+2017,R64,Purdue,Bucknell,4,13,0.929712,0.735222,0.787,0.787,1,Purdue
+2017,R64,Butler,Winthrop,4,13,0.90384,0.610601,0.787,0.787,1,Butler
+2017,R64,Virginia,Middle Tennessee,5,12,0.94773,0.833938,0.65,0.65,1,Virginia
+2017,R64,Iowa St.,Nevada,5,12,0.92646,0.802134,0.65,0.65,1,Iowa St.
+2017,R64,Notre Dame,Princeton,5,12,0.920516,0.798904,0.65,0.65,0,Princeton
+2017,R64,Minnesota,UNC Wilmington,5,12,0.866489,0.788075,0.65,0.65,0,UNC Wilmington
+2017,R64,SMU,Wake Forest,6,11,0.942586,0.883119,0.62,0.62,1,SMU
+2017,R64,Cincinnati,Kansas St.,6,11,0.929177,0.881822,0.62,0.62,1,Cincinnati
+2017,R64,Creighton,Rhode Island,6,11,0.893082,0.871672,0.62,0.62,1,Creighton
+2017,R64,Maryland,Xavier,6,11,0.844764,0.871313,0.62,0.62,1,Maryland
+2017,R64,Michigan,Wichita St.,7,10,0.936613,0.940316,0.605,0.605,1,Michigan
+2017,R64,Saint Mary's,Oklahoma St.,7,10,0.933436,0.92209,0.605,0.605,0,Oklahoma St.
+2017,R64,South Carolina,Marquette,7,10,0.908291,0.888065,0.605,0.605,1,South Carolina
+2017,R64,Dayton,VCU,7,10,0.833318,0.798845,0.605,0.605,1,Dayton
+2017,R64,Wisconsin,Vanderbilt,8,9,0.925549,0.889787,0.52,0.52,1,Wisconsin
+2017,R64,Miami FL,Michigan St.,8,9,0.880419,0.866095,0.52,0.52,0,Michigan St.
+2017,R64,Northwestern,Virginia Tech,8,9,0.856385,0.840113,0.52,0.52,1,Northwestern
+2017,R64,Arkansas,Seton Hall,8,9,0.833861,0.817799,0.52,0.52,0,Seton Hall
+2018,R64,Villanova,Penn,1,16,0.972517,0.664433,0.993,0.993,1,Villanova
+2018,R64,Virginia,UMBC,1,16,0.961243,0.496321,0.993,0.993,1,Virginia
+2018,R64,Kansas,Radford,1,16,0.938486,0.455909,0.993,0.993,1,Kansas
+2018,R64,Xavier,LIU Brooklyn,1,16,0.921075,0.293746,0.993,0.993,1,Xavier
+2018,R64,Duke,Georgia St.,2,15,0.959228,0.689358,0.935,0.935,1,Duke
+2018,R64,Purdue,Lipscomb,2,15,0.948403,0.537476,0.935,0.935,1,Purdue
+2018,R64,Cincinnati,Iona,2,15,0.941744,0.533342,0.935,0.935,1,Cincinnati
+2018,R64,North Carolina,Cal St. Fullerton,2,15,0.924209,0.475975,0.935,0.935,0,Cal St. Fullerton
+2018,R64,Michigan,Montana,3,14,0.937454,0.718357,0.85,0.85,1,Michigan
+2018,R64,Michigan St.,Stephen F. Austin,3,14,0.934694,0.68318,0.85,0.85,1,Michigan St.
+2018,R64,Tennessee,Bucknell,3,14,0.922514,0.675984,0.85,0.85,1,Tennessee
+2018,R64,Texas Tech,Wright St.,3,14,0.916972,0.563822,0.85,0.85,1,Texas Tech
+2018,R64,Gonzaga,Buffalo,4,13,0.919224,0.776123,0.787,0.787,0,Buffalo
+2018,R64,Auburn,UNC Greensboro,4,13,0.867159,0.720733,0.787,0.787,1,Auburn
+2018,R64,Wichita St.,Marshall,4,13,0.867121,0.663289,0.787,0.787,1,Wichita St.
+2018,R64,Arizona,College of Charleston,4,13,0.852757,0.568473,0.787,0.787,1,Arizona
+2018,R64,West Virginia,Davidson,5,12,0.935294,0.82303,0.65,0.65,0,Davidson
+2018,R64,Ohio St.,South Dakota St.,5,12,0.915353,0.798874,0.65,0.65,1,Ohio St.
+2018,R64,Kentucky,New Mexico St.,5,12,0.900045,0.792652,0.65,0.65,1,Kentucky
+2018,R64,Clemson,Murray St.,5,12,0.898378,0.744873,0.65,0.65,1,Clemson
+2018,R64,Florida,San Diego St.,6,11,0.913213,0.848646,0.62,0.62,0,San Diego St.
+2018,R64,Houston,Loyola Chicago,6,11,0.909718,0.844424,0.62,0.62,1,Houston
+2018,R64,TCU,Syracuse,6,11,0.880352,0.834356,0.62,0.62,1,TCU
+2018,R64,Miami FL,Arizona St.,6,11,0.862343,0.808916,0.62,0.62,1,Miami FL
+2018,R64,Texas A&M,Butler,7,10,0.863999,0.906785,0.605,0.605,0,Butler
+2018,R64,Arkansas,Texas,7,10,0.848302,0.854718,0.605,0.605,1,Arkansas
+2018,R64,Nevada,Oklahoma,7,10,0.846196,0.835046,0.605,0.605,1,Nevada
+2018,R64,Rhode Island,Providence,7,10,0.798831,0.802675,0.605,0.605,1,Rhode Island
+2018,R64,Seton Hall,Florida St.,8,9,0.890239,0.863119,0.52,0.52,0,Florida St.
+2018,R64,Creighton,Kansas St.,8,9,0.883643,0.858355,0.52,0.52,1,Creighton
+2018,R64,Virginia Tech,North Carolina St.,8,9,0.85785,0.820984,0.52,0.52,0,North Carolina St.
+2018,R64,Missouri,Alabama,8,9,0.842016,0.807446,0.52,0.52,0,Alabama
+2019,R64,Gonzaga,Gardner Webb,1,16,0.973168,0.486766,0.993,0.993,1,Gonzaga
+2019,R64,Virginia,North Dakota St.,1,16,0.971389,0.440053,0.993,0.993,1,Virginia
+2019,R64,Duke,Iona,1,16,0.961792,0.412389,0.993,0.993,1,Duke
+2019,R64,North Carolina,Prairie View A&M,1,16,0.955091,0.401685,0.993,0.993,1,North Carolina
+2019,R64,Michigan,Colgate,2,15,0.963448,0.600287,0.935,0.935,1,Michigan
+2019,R64,Michigan St.,Montana,2,15,0.956126,0.586093,0.935,0.935,1,Michigan St.
+2019,R64,Kentucky,Bradley,2,15,0.953349,0.516708,0.935,0.935,1,Kentucky
+2019,R64,Tennessee,Abilene Christian,2,15,0.944747,0.51193,0.935,0.935,0,Abilene Christian
+2019,R64,Texas Tech,Yale,3,14,0.967037,0.702865,0.85,0.85,1,Texas Tech
+2019,R64,Purdue,Northern Kentucky,3,14,0.950147,0.670542,0.85,0.85,1,Purdue
+2019,R64,Houston,Georgia St.,3,14,0.941108,0.646222,0.85,0.85,1,Houston
+2019,R64,LSU,Old Dominion,3,14,0.902039,0.632739,0.85,0.85,1,LSU
+2019,R64,Virginia Tech,UC Irvine,4,13,0.931551,0.745517,0.787,0.787,1,Virginia Tech
+2019,R64,Kansas St.,Vermont,4,13,0.909779,0.735295,0.787,0.787,0,Vermont
+2019,R64,Florida St.,Northeastern,4,13,0.909501,0.671495,0.787,0.787,1,Florida St.
+2019,R64,Kansas,Saint Louis,4,13,0.903004,0.65677,0.787,0.787,1,Kansas
+2019,R64,Auburn,Oregon,5,12,0.937559,0.864287,0.65,0.65,1,Auburn
+2019,R64,Wisconsin,New Mexico St.,5,12,0.902001,0.815022,0.65,0.65,0,New Mexico St.
+2019,R64,Mississippi St.,Murray St.,5,12,0.891594,0.784363,0.65,0.65,1,Mississippi St.
+2019,R64,Marquette,Liberty,5,12,0.84653,0.740941,0.65,0.65,1,Marquette
+2019,R64,Iowa St.,Saint Mary's,6,11,0.90617,0.860562,0.62,0.62,1,Iowa St.
+2019,R64,Maryland,Ohio St.,6,11,0.880105,0.8227,0.62,0.62,1,Maryland
+2019,R64,Buffalo,Belmont,6,11,0.87906,0.812663,0.62,0.62,0,Belmont
+2019,R64,Villanova,Temple,6,11,0.838331,0.780691,0.62,0.62,1,Villanova
+2019,R64,Louisville,Florida,7,10,0.896273,0.887633,0.605,0.605,0,Florida
+2019,R64,Wofford,Iowa,7,10,0.88594,0.828992,0.605,0.605,0,Iowa
+2019,R64,Cincinnati,Minnesota,7,10,0.882217,0.817844,0.605,0.605,1,Cincinnati
+2019,R64,Nevada,Seton Hall,7,10,0.85985,0.766869,0.605,0.605,1,Nevada
+2019,R64,VCU,UCF,8,9,0.881224,0.893711,0.52,0.52,1,VCU
+2019,R64,Syracuse,Oklahoma,8,9,0.855093,0.870013,0.52,0.52,0,Oklahoma
+2019,R64,Mississippi,Baylor,8,9,0.835125,0.831617,0.52,0.52,0,Baylor
+2019,R64,Utah St.,Washington,8,9,0.831326,0.803967,0.52,0.52,1,Utah St.
+2021,R64,Gonzaga,Drexel,1,16,0.976891,0.549057,0.993,0.993,1,Gonzaga
+2021,R64,Baylor,Hartford,1,16,0.968292,0.440773,0.993,0.993,1,Baylor
+2021,R64,Illinois,Norfolk St.,1,16,0.949137,0.386006,0.993,0.993,1,Illinois
+2021,R64,Michigan,Texas Southern,1,16,0.94771,0.353595,0.993,0.993,1,Michigan
+2021,R64,Houston,Grand Canyon,2,15,0.955453,0.696089,0.935,0.935,1,Houston
+2021,R64,Iowa,Oral Roberts,2,15,0.939856,0.594689,0.935,0.935,0,Oral Roberts
+2021,R64,Alabama,Iona,2,15,0.927824,0.554896,0.935,0.935,1,Alabama
+2021,R64,Ohio St.,Cleveland St.,2,15,0.920465,0.463265,0.935,0.935,1,Ohio St.
+2021,R64,Texas,Colgate,3,14,0.899914,0.74963,0.85,0.85,0,Colgate
+2021,R64,West Virginia,Eastern Washington,3,14,0.894463,0.713606,0.85,0.85,1,West Virginia
+2021,R64,Arkansas,Abilene Christian,3,14,0.89147,0.692259,0.85,0.85,1,Arkansas
+2021,R64,Kansas,Morehead St.,3,14,0.878809,0.561973,0.85,0.85,1,Kansas
+2021,R64,Florida St.,Ohio,4,13,0.921065,0.767787,0.787,0.787,1,Florida St.
+2021,R64,Virginia,North Texas,4,13,0.89434,0.749035,0.787,0.787,1,Virginia
+2021,R64,Purdue,Liberty,4,13,0.88216,0.706255,0.787,0.787,0,Liberty
+2021,R64,Oklahoma St.,UNC Greensboro,4,13,0.866038,0.623765,0.787,0.787,0,UNC Greensboro
+2021,R64,Colorado,Georgetown,5,12,0.929246,0.829548,0.65,0.65,1,Colorado
+2021,R64,Villanova,Oregon St.,5,12,0.910828,0.829531,0.65,0.65,1,Villanova
+2021,R64,Creighton,UC Santa Barbara,5,12,0.892946,0.771364,0.65,0.65,1,Creighton
+2021,R64,Tennessee,Winthrop,5,12,0.887422,0.702745,0.65,0.65,1,Tennessee
+2021,R64,USC,UCLA,6,11,0.936213,0.902387,0.62,0.62,0,UCLA
+2021,R64,Texas Tech,Syracuse,6,11,0.906667,0.860202,0.62,0.62,1,Texas Tech
+2021,R64,San Diego St.,Utah St.,6,11,0.904493,0.83963,0.62,0.62,0,Utah St.
+2021,R64,BYU,Michigan St.,6,11,0.892362,0.799867,0.62,0.62,1,BYU
+2021,R64,Connecticut,Maryland,7,10,0.907958,0.869712,0.605,0.605,0,Maryland
+2021,R64,Oregon,Rutgers,7,10,0.880163,0.844925,0.605,0.605,1,Oregon
+2021,R64,Florida,VCU,7,10,0.856144,0.842428,0.605,0.605,1,Florida
+2021,R64,Clemson,Virginia Tech,7,10,0.842031,0.836637,0.605,0.605,1,Clemson
+2021,R64,Loyola Chicago,Wisconsin,8,9,0.915073,0.91666,0.52,0.52,1,Loyola Chicago
+2021,R64,LSU,Georgia Tech,8,9,0.894128,0.87354,0.52,0.52,0,Georgia Tech
+2021,R64,North Carolina,St. Bonaventure,8,9,0.861675,0.867413,0.52,0.52,1,North Carolina
+2021,R64,Oklahoma,Missouri,8,9,0.855378,0.850852,0.52,0.52,0,Missouri
+2022,R64,Gonzaga,Georgia St.,1,16,0.966181,0.598259,0.993,0.993,1,Gonzaga
+2022,R64,Kansas,Bryant,1,16,0.95802,0.465123,0.993,0.993,1,Kansas
+2022,R64,Baylor,Wright St.,1,16,0.94907,0.461291,0.993,0.993,1,Baylor
+2022,R64,Arizona,Texas Southern,1,16,0.934109,0.435602,0.993,0.993,1,Arizona
+2022,R64,Duke,Saint Peter's,2,15,0.944015,0.67863,0.935,0.935,1,Duke
+2022,R64,Villanova,Delaware,2,15,0.934586,0.590818,0.935,0.935,1,Villanova
+2022,R64,Kentucky,Jacksonville St.,2,15,0.929467,0.563765,0.935,0.935,1,Kentucky
+2022,R64,Auburn,Cal St. Fullerton,2,15,0.922756,0.467474,0.935,0.935,1,Auburn
+2022,R64,Texas Tech,Colgate,3,14,0.950897,0.602647,0.85,0.85,0,Colgate
+2022,R64,Tennessee,Longwood,3,14,0.943942,0.554057,0.85,0.85,1,Tennessee
+2022,R64,Purdue,Yale,3,14,0.926733,0.544903,0.85,0.85,1,Purdue
+2022,R64,Wisconsin,Montana St.,3,14,0.851113,0.530771,0.85,0.85,1,Wisconsin
+2022,R64,UCLA,Vermont,4,13,0.932067,0.798395,0.787,0.787,1,UCLA
+2022,R64,Illinois,Chattanooga,4,13,0.894302,0.755671,0.787,0.787,1,Illinois
+2022,R64,Arkansas,South Dakota St.,4,13,0.88938,0.754161,0.787,0.787,1,Arkansas
+2022,R64,Providence,Akron,4,13,0.855359,0.604079,0.787,0.787,1,Providence
+2022,R64,Houston,Indiana,5,12,0.959492,0.865202,0.65,0.65,1,Houston
+2022,R64,Iowa,UAB,5,12,0.926521,0.800125,0.65,0.65,1,Iowa
+2022,R64,Saint Mary's,Wyoming,5,12,0.902421,0.766091,0.65,0.65,1,Saint Mary's
+2022,R64,Connecticut,New Mexico St.,5,12,0.870909,0.757882,0.65,0.65,1,Connecticut
+2022,R64,Texas,Virginia Tech,6,11,0.915167,0.90275,0.62,0.62,0,Virginia Tech
+2022,R64,LSU,Michigan,6,11,0.876604,0.874144,0.62,0.62,1,LSU
+2022,R64,Alabama,Notre Dame,6,11,0.861228,0.854196,0.62,0.62,1,Alabama
+2022,R64,Colorado St.,Iowa St.,6,11,0.819025,0.834586,0.62,0.62,1,Colorado St.
+2022,R64,Ohio St.,San Francisco,7,10,0.861233,0.874816,0.605,0.605,1,Ohio St.
+2022,R64,Michigan St.,Miami FL,7,10,0.840496,0.846736,0.605,0.605,1,Michigan St.
+2022,R64,Murray St.,Loyola Chicago,7,10,0.824084,0.84391,0.605,0.605,0,Loyola Chicago
+2022,R64,USC,Davidson,7,10,0.802098,0.825833,0.605,0.605,0,Davidson
+2022,R64,North Carolina,Memphis,8,9,0.911258,0.902827,0.52,0.52,1,North Carolina
+2022,R64,San Diego St.,TCU,8,9,0.867546,0.869814,0.52,0.52,0,TCU
+2022,R64,Boise St.,Creighton,8,9,0.843442,0.815135,0.52,0.52,1,Boise St.
+2022,R64,Seton Hall,Marquette,8,9,0.800005,0.778738,0.52,0.52,1,Seton Hall
+2023,R64,Alabama,Northern Kentucky,1,16,0.954842,0.534881,0.993,0.993,1,Alabama
+2023,R64,Houston,Texas A&M Corpus Chris,1,16,0.953161,0.456579,0.993,0.993,1,Houston
+2023,R64,Purdue,Howard,1,16,0.933252,0.403121,0.993,0.993,1,Purdue
+2023,R64,Kansas,Fairleigh Dickinson,1,16,0.91765,0.290869,0.993,0.993,1,Kansas
+2023,R64,UCLA,Princeton,2,15,0.952842,0.70831,0.935,0.935,1,UCLA
+2023,R64,Texas,Vermont,2,15,0.93709,0.687309,0.935,0.935,1,Texas
+2023,R64,Arizona,Colgate,2,15,0.929196,0.66072,0.935,0.935,1,Arizona
+2023,R64,Marquette,UNC Asheville,2,15,0.919694,0.46565,0.935,0.935,1,Marquette
+2023,R64,Gonzaga,Montana St.,3,14,0.925079,0.687148,0.85,0.85,1,Gonzaga
+2023,R64,Baylor,Kennesaw St.,3,14,0.899127,0.642814,0.85,0.85,1,Baylor
+2023,R64,Xavier,Grand Canyon,3,14,0.889041,0.638829,0.85,0.85,1,Xavier
+2023,R64,Kansas St.,UC Santa Barbara,3,14,0.880324,0.612565,0.85,0.85,1,Kansas St.
+2023,R64,Connecticut,Iona,4,13,0.96428,0.790916,0.787,0.787,0,Iona
+2023,R64,Tennessee,Kent St.,4,13,0.940125,0.756049,0.787,0.787,0,Kent St.
+2023,R64,Virginia,Louisiana Lafayette,4,13,0.859104,0.729885,0.787,0.787,1,Virginia
+2023,R64,Indiana,Furman,4,13,0.855716,0.698377,0.787,0.787,1,Indiana
+2023,R64,Saint Mary's,Drake,5,12,0.921265,0.815546,0.65,0.65,0,Drake
+2023,R64,San Diego St.,VCU,5,12,0.920477,0.802588,0.65,0.65,1,San Diego St.
+2023,R64,Duke,College of Charleston,5,12,0.907157,0.786477,0.65,0.65,1,Duke
+2023,R64,Miami FL,Oral Roberts,5,12,0.871486,0.748735,0.65,0.65,1,Miami FL
+2023,R64,Creighton,North Carolina St.,6,11,0.917708,0.827204,0.62,0.62,1,Creighton
+2023,R64,Kentucky,Arizona St.,6,11,0.873786,0.820653,0.62,0.62,1,Kentucky
+2023,R64,TCU,Providence,6,11,0.870423,0.812821,0.62,0.62,1,TCU
+2023,R64,Iowa St.,Mississippi St.,6,11,0.867825,0.798543,0.62,0.62,0,Mississippi St.
+2023,R64,Texas A&M,Utah St.,7,10,0.880812,0.867046,0.605,0.605,1,Texas A&M
+2023,R64,Michigan St.,Penn St.,7,10,0.877126,0.854747,0.605,0.605,1,Michigan St.
+2023,R64,Northwestern,Boise St.,7,10,0.864203,0.836141,0.605,0.605,0,Boise St.
+2023,R64,Missouri,USC,7,10,0.793892,0.829774,0.605,0.605,0,USC
+2023,R64,Memphis,West Virginia,8,9,0.90301,0.893292,0.52,0.52,1,Memphis
+2023,R64,Arkansas,Auburn,8,9,0.889425,0.882879,0.52,0.52,1,Arkansas
+2023,R64,Maryland,Florida Atlantic,8,9,0.86583,0.881499,0.52,0.52,0,Florida Atlantic
+2023,R64,Iowa,Illinois,8,9,0.838516,0.821572,0.52,0.52,0,Illinois

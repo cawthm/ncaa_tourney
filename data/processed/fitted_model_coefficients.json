@@ -1,0 +1,19 @@
+{
+  "intercept": [0.3242],
+  "coefficient": [0.799],
+  "n_games": [478],
+  "years": ["2008-2023"],
+  "metrics": {
+    "fitted": {
+      "brier_score": [0.1648],
+      "log_loss": [0.4936],
+      "accuracy": [0.7636]
+    },
+    "theoretical": {
+      "brier_score": [0.1679],
+      "log_loss": [0.4984],
+      "accuracy": [0.7385]
+    }
+  },
+  "fitted_at": ["2026-01-18 15:38:58"]
+}

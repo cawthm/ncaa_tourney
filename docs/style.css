@@ -225,6 +225,20 @@ body {
     color: #feb2b2;
 }
 
+.ev-diff {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+.ev-diff.adj-up {
+    color: #68d391;
+}
+
+.ev-diff.adj-down {
+    color: #fc8181;
+}
+
 .matchup-teams {
     padding: 4px 0;
 }

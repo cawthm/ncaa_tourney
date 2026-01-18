@@ -1,34 +1,86 @@
 {
   "matchups": [
-    {"id": "8_9", "label": "8/9", "highSeed": 8, "lowSeed": 9},
-    {"id": "7_10", "label": "7/10", "highSeed": 7, "lowSeed": 10},
-    {"id": "6_11", "label": "6/11", "highSeed": 6, "lowSeed": 11},
-    {"id": "5_12", "label": "5/12", "highSeed": 5, "lowSeed": 12},
-    {"id": "4_13", "label": "4/13", "highSeed": 4, "lowSeed": 13},
-    {"id": "3_14", "label": "3/14", "highSeed": 3, "lowSeed": 14},
-    {"id": "2_15", "label": "2/15", "highSeed": 2, "lowSeed": 15},
-    {"id": "1_16", "label": "1/16", "highSeed": 1, "lowSeed": 16}
+    {
+      "id": "8_9",
+      "label": "8/9",
+      "highSeed": 8,
+      "lowSeed": 9
+    },
+    {
+      "id": "7_10",
+      "label": "7/10",
+      "highSeed": 7,
+      "lowSeed": 10
+    },
+    {
+      "id": "6_11",
+      "label": "6/11",
+      "highSeed": 6,
+      "lowSeed": 11
+    },
+    {
+      "id": "5_12",
+      "label": "5/12",
+      "highSeed": 5,
+      "lowSeed": 12
+    },
+    {
+      "id": "4_13",
+      "label": "4/13",
+      "highSeed": 4,
+      "lowSeed": 13
+    },
+    {
+      "id": "3_14",
+      "label": "3/14",
+      "highSeed": 3,
+      "lowSeed": 14
+    },
+    {
+      "id": "2_15",
+      "label": "2/15",
+      "highSeed": 2,
+      "lowSeed": 15
+    },
+    {
+      "id": "1_16",
+      "label": "1/16",
+      "highSeed": 1,
+      "lowSeed": 16
+    }
   ],
-  "regions": ["East", "South", "West", "Midwest"],
+  "regions": [
+    "East",
+    "South",
+    "West",
+    "Midwest"
+  ],
   "expectedValues": {
     "8_9": 1.27,
     "7_10": 1.48,
     "6_11": 1.78,
     "5_12": 1.72,
-    "4_13": 2.40,
+    "4_13": 2.4,
     "3_14": 2.93,
     "2_15": 4.75,
     "1_16": 8.75
   },
   "historicalPriceRatios": {
-    "8_9": 1.0,
+    "8_9": 1,
     "7_10": 1.15,
     "6_11": 1.35,
-    "5_12": 1.30,
+    "5_12": 1.3,
     "4_13": 1.75,
-    "3_14": 2.10,
-    "2_15": 3.50,
-    "1_16": 6.50
+    "3_14": 2.1,
+    "2_15": 3.5,
+    "1_16": 6.5
+  },
+  "fittedModel": {
+    "intercept": 0.3242,
+    "coefficient": 0.799,
+    "description": "Logistic regression: P(A wins) = 1/(1+exp(-(intercept + coefficient * log_odds_diff)))",
+    "fittedFrom": "478 tournament games (2008-2023)",
+    "accuracy": 0.7636
   },
   "deltaPerSigma": {
     "1": 1.74,
@@ -37,49 +89,635 @@
     "4": 1.05,
     "5": 0.87,
     "6": 0.76,
-    "7": 0.70,
+    "7": 0.7,
     "8": 0.58
+  },
+  "bracket2025": {
+    "East": {
+      "1": {
+        "team": "Duke",
+        "barthag": 0.9824,
+        "adjEV": 17.36,
+        "naiveEV": 11.76
+      },
+      "2": {
+        "team": "Alabama",
+        "barthag": 0.9612,
+        "adjEV": 8.07,
+        "naiveEV": 7.12
+      },
+      "3": {
+        "team": "Wisconsin",
+        "barthag": 0.941,
+        "adjEV": 4.46,
+        "naiveEV": 4.62
+      },
+      "4": {
+        "team": "Arizona",
+        "barthag": 0.9459,
+        "adjEV": 4.9,
+        "naiveEV": 3.87
+      },
+      "5": {
+        "team": "Oregon",
+        "barthag": 0.8998,
+        "adjEV": 1.78,
+        "naiveEV": 2.78
+      },
+      "6": {
+        "team": "BYU",
+        "barthag": 0.9373,
+        "adjEV": 3.89,
+        "naiveEV": 2.41
+      },
+      "7": {
+        "team": "St. Mary's",
+        "barthag": 0.9137,
+        "adjEV": 2.19,
+        "naiveEV": 1.79
+      },
+      "8": {
+        "team": "Baylor",
+        "barthag": 0.899,
+        "adjEV": 1.25,
+        "naiveEV": 1.66
+      },
+      "9": {
+        "team": "9-seed",
+        "barthag": 0.76,
+        "adjEV": 0.17,
+        "naiveEV": 1.42
+      },
+      "10": {
+        "team": "10-seed",
+        "barthag": 0.74,
+        "adjEV": 0.2,
+        "naiveEV": 1.27
+      },
+      "11": {
+        "team": "11-seed",
+        "barthag": 0.72,
+        "adjEV": 0.18,
+        "naiveEV": 1.39
+      },
+      "12": {
+        "team": "12-seed",
+        "barthag": 0.7,
+        "adjEV": 0.18,
+        "naiveEV": 0.8
+      },
+      "13": {
+        "team": "13-seed",
+        "barthag": 0.68,
+        "adjEV": 0.15,
+        "naiveEV": 0.34
+      },
+      "14": {
+        "team": "14-seed",
+        "barthag": 0.65,
+        "adjEV": 0.11,
+        "naiveEV": 0.25
+      },
+      "15": {
+        "team": "15-seed",
+        "barthag": 0.62,
+        "adjEV": 0.08,
+        "naiveEV": 0.16
+      },
+      "16": {
+        "team": "16-seed",
+        "barthag": 0.55,
+        "adjEV": 0.03,
+        "naiveEV": 0.02
+      }
+    },
+    "South": {
+      "1": {
+        "team": "Auburn",
+        "barthag": 0.9746,
+        "adjEV": 14.36,
+        "naiveEV": 11.76
+      },
+      "2": {
+        "team": "Michigan St",
+        "barthag": 0.9399,
+        "adjEV": 5.91,
+        "naiveEV": 7.12
+      },
+      "3": {
+        "team": "Iowa St",
+        "barthag": 0.9441,
+        "adjEV": 6.16,
+        "naiveEV": 4.62
+      },
+      "4": {
+        "team": "Texas A&M",
+        "barthag": 0.9165,
+        "adjEV": 3.23,
+        "naiveEV": 3.87
+      },
+      "5": {
+        "team": "Michigan",
+        "barthag": 0.9166,
+        "adjEV": 3.19,
+        "naiveEV": 2.78
+      },
+      "6": {
+        "team": "Ole Miss",
+        "barthag": 0.9146,
+        "adjEV": 3.03,
+        "naiveEV": 2.41
+      },
+      "7": {
+        "team": "Marquette",
+        "barthag": 0.8909,
+        "adjEV": 2.08,
+        "naiveEV": 1.79
+      },
+      "8": {
+        "team": "Louisville",
+        "barthag": 0.9151,
+        "adjEV": 2.29,
+        "naiveEV": 1.66
+      },
+      "9": {
+        "team": "9-seed",
+        "barthag": 0.76,
+        "adjEV": 0.21,
+        "naiveEV": 1.42
+      },
+      "10": {
+        "team": "10-seed",
+        "barthag": 0.74,
+        "adjEV": 0.32,
+        "naiveEV": 1.27
+      },
+      "11": {
+        "team": "11-seed",
+        "barthag": 0.72,
+        "adjEV": 0.24,
+        "naiveEV": 1.39
+      },
+      "12": {
+        "team": "12-seed",
+        "barthag": 0.7,
+        "adjEV": 0.22,
+        "naiveEV": 0.8
+      },
+      "13": {
+        "team": "13-seed",
+        "barthag": 0.68,
+        "adjEV": 0.2,
+        "naiveEV": 0.34
+      },
+      "14": {
+        "team": "14-seed",
+        "barthag": 0.65,
+        "adjEV": 0.14,
+        "naiveEV": 0.25
+      },
+      "15": {
+        "team": "15-seed",
+        "barthag": 0.62,
+        "adjEV": 0.13,
+        "naiveEV": 0.16
+      },
+      "16": {
+        "team": "16-seed",
+        "barthag": 0.55,
+        "adjEV": 0.04,
+        "naiveEV": 0.02
+      }
+    },
+    "West": {
+      "1": {
+        "team": "Florida",
+        "barthag": 0.9709,
+        "adjEV": 13.3,
+        "naiveEV": 11.76
+      },
+      "2": {
+        "team": "St. John's",
+        "barthag": 0.9314,
+        "adjEV": 5.13,
+        "naiveEV": 7.12
+      },
+      "3": {
+        "team": "Texas Tech",
+        "barthag": 0.9501,
+        "adjEV": 7.06,
+        "naiveEV": 4.62
+      },
+      "4": {
+        "team": "Maryland",
+        "barthag": 0.9484,
+        "adjEV": 7.24,
+        "naiveEV": 3.87
+      },
+      "5": {
+        "team": "Memphis",
+        "barthag": 0.8015,
+        "adjEV": 0.74,
+        "naiveEV": 2.78
+      },
+      "6": {
+        "team": "Mizzou",
+        "barthag": 0.9247,
+        "adjEV": 3.63,
+        "naiveEV": 2.41
+      },
+      "7": {
+        "team": "Arkansas",
+        "barthag": 0.8815,
+        "adjEV": 1.92,
+        "naiveEV": 1.79
+      },
+      "8": {
+        "team": "UConn",
+        "barthag": 0.8841,
+        "adjEV": 1.47,
+        "naiveEV": 1.66
+      },
+      "9": {
+        "team": "9-seed",
+        "barthag": 0.76,
+        "adjEV": 0.28,
+        "naiveEV": 1.42
+      },
+      "10": {
+        "team": "10-seed",
+        "barthag": 0.74,
+        "adjEV": 0.36,
+        "naiveEV": 1.27
+      },
+      "11": {
+        "team": "11-seed",
+        "barthag": 0.72,
+        "adjEV": 0.22,
+        "naiveEV": 1.39
+      },
+      "12": {
+        "team": "12-seed",
+        "barthag": 0.7,
+        "adjEV": 0.29,
+        "naiveEV": 0.8
+      },
+      "13": {
+        "team": "13-seed",
+        "barthag": 0.68,
+        "adjEV": 0.23,
+        "naiveEV": 0.34
+      },
+      "14": {
+        "team": "14-seed",
+        "barthag": 0.65,
+        "adjEV": 0.13,
+        "naiveEV": 0.25
+      },
+      "15": {
+        "team": "15-seed",
+        "barthag": 0.62,
+        "adjEV": 0.15,
+        "naiveEV": 0.16
+      },
+      "16": {
+        "team": "16-seed",
+        "barthag": 0.55,
+        "adjEV": 0.06,
+        "naiveEV": 0.02
+      }
+    },
+    "Midwest": {
+      "1": {
+        "team": "Houston",
+        "barthag": 0.9836,
+        "adjEV": 16.83,
+        "naiveEV": 11.76
+      },
+      "2": {
+        "team": "Tennessee",
+        "barthag": 0.9563,
+        "adjEV": 7.06,
+        "naiveEV": 7.12
+      },
+      "3": {
+        "team": "Kentucky",
+        "barthag": 0.9305,
+        "adjEV": 3.86,
+        "naiveEV": 4.62
+      },
+      "4": {
+        "team": "Purdue",
+        "barthag": 0.9366,
+        "adjEV": 3.81,
+        "naiveEV": 3.87
+      },
+      "5": {
+        "team": "Clemson",
+        "barthag": 0.9137,
+        "adjEV": 2.27,
+        "naiveEV": 2.78
+      },
+      "6": {
+        "team": "Illinois",
+        "barthag": 0.9248,
+        "adjEV": 3.25,
+        "naiveEV": 2.41
+      },
+      "7": {
+        "team": "UCLA",
+        "barthag": 0.9288,
+        "adjEV": 3.15,
+        "naiveEV": 1.79
+      },
+      "8": {
+        "team": "Gonzaga",
+        "barthag": 0.9494,
+        "adjEV": 3.59,
+        "naiveEV": 1.66
+      },
+      "9": {
+        "team": "9-seed",
+        "barthag": 0.76,
+        "adjEV": 0.11,
+        "naiveEV": 1.42
+      },
+      "10": {
+        "team": "10-seed",
+        "barthag": 0.74,
+        "adjEV": 0.2,
+        "naiveEV": 1.27
+      },
+      "11": {
+        "team": "11-seed",
+        "barthag": 0.72,
+        "adjEV": 0.22,
+        "naiveEV": 1.39
+      },
+      "12": {
+        "team": "12-seed",
+        "barthag": 0.7,
+        "adjEV": 0.17,
+        "naiveEV": 0.8
+      },
+      "13": {
+        "team": "13-seed",
+        "barthag": 0.68,
+        "adjEV": 0.15,
+        "naiveEV": 0.34
+      },
+      "14": {
+        "team": "14-seed",
+        "barthag": 0.65,
+        "adjEV": 0.14,
+        "naiveEV": 0.25
+      },
+      "15": {
+        "team": "15-seed",
+        "barthag": 0.62,
+        "adjEV": 0.08,
+        "naiveEV": 0.16
+      },
+      "16": {
+        "team": "16-seed",
+        "barthag": 0.55,
+        "adjEV": 0.02,
+        "naiveEV": 0.02
+      }
+    }
   },
   "teams2025": {
     "East": {
-      "8_9": {"high": "Baylor", "low": "9-seed", "seed": 8, "zScore": -0.53, "barthag": 0.8990},
-      "7_10": {"high": "St. Mary's", "low": "10-seed", "seed": 7, "zScore": 0.54, "barthag": 0.9137},
-      "6_11": {"high": "BYU", "low": "11-seed", "seed": 6, "zScore": 1.48, "barthag": 0.9373},
-      "5_12": {"high": "Oregon", "low": "12-seed", "seed": 5, "zScore": 0.36, "barthag": 0.8998},
-      "4_13": {"high": "Arizona", "low": "13-seed", "seed": 4, "zScore": 0.72, "barthag": 0.9459},
-      "3_14": {"high": "Wisconsin", "low": "14-seed", "seed": 3, "zScore": -0.06, "barthag": 0.9410},
-      "2_15": {"high": "Alabama", "low": "15-seed", "seed": 2, "zScore": 1.16, "barthag": 0.9612},
-      "1_16": {"high": "Duke", "low": "16-seed", "seed": 1, "zScore": 0.85, "barthag": 0.9824}
+      "8_9": {
+        "high": "Baylor",
+        "low": "9-seed",
+        "seed": 8,
+        "zScore": -0.53,
+        "barthag": 0.899
+      },
+      "7_10": {
+        "high": "St. Mary's",
+        "low": "10-seed",
+        "seed": 7,
+        "zScore": 0.54,
+        "barthag": 0.9137
+      },
+      "6_11": {
+        "high": "BYU",
+        "low": "11-seed",
+        "seed": 6,
+        "zScore": 1.48,
+        "barthag": 0.9373
+      },
+      "5_12": {
+        "high": "Oregon",
+        "low": "12-seed",
+        "seed": 5,
+        "zScore": 0.36,
+        "barthag": 0.8998
+      },
+      "4_13": {
+        "high": "Arizona",
+        "low": "13-seed",
+        "seed": 4,
+        "zScore": 0.72,
+        "barthag": 0.9459
+      },
+      "3_14": {
+        "high": "Wisconsin",
+        "low": "14-seed",
+        "seed": 3,
+        "zScore": -0.06,
+        "barthag": 0.941
+      },
+      "2_15": {
+        "high": "Alabama",
+        "low": "15-seed",
+        "seed": 2,
+        "zScore": 1.16,
+        "barthag": 0.9612
+      },
+      "1_16": {
+        "high": "Duke",
+        "low": "16-seed",
+        "seed": 1,
+        "zScore": 0.85,
+        "barthag": 0.9824
+      }
     },
     "South": {
-      "8_9": {"high": "Louisville", "low": "9-seed", "seed": 8, "zScore": 0.13, "barthag": 0.9151},
-      "7_10": {"high": "Marquette", "low": "10-seed", "seed": 7, "zScore": -0.69, "barthag": 0.8909},
-      "6_11": {"high": "Ole Miss", "low": "11-seed", "seed": 6, "zScore": -1.34, "barthag": 0.9146},
-      "5_12": {"high": "Michigan", "low": "12-seed", "seed": 5, "zScore": 0.71, "barthag": 0.9166},
-      "4_13": {"high": "Texas A&M", "low": "13-seed", "seed": 4, "zScore": -1.63, "barthag": 0.9165},
-      "3_14": {"high": "Iowa St", "low": "14-seed", "seed": 3, "zScore": 0.38, "barthag": 0.9441},
-      "2_15": {"high": "Michigan St", "low": "15-seed", "seed": 2, "zScore": -0.61, "barthag": 0.9399},
-      "1_16": {"high": "Auburn", "low": "16-seed", "seed": 1, "zScore": -0.62, "barthag": 0.9746}
+      "8_9": {
+        "high": "Louisville",
+        "low": "9-seed",
+        "seed": 8,
+        "zScore": 0.13,
+        "barthag": 0.9151
+      },
+      "7_10": {
+        "high": "Marquette",
+        "low": "10-seed",
+        "seed": 7,
+        "zScore": -0.69,
+        "barthag": 0.8909
+      },
+      "6_11": {
+        "high": "Ole Miss",
+        "low": "11-seed",
+        "seed": 6,
+        "zScore": -1.34,
+        "barthag": 0.9146
+      },
+      "5_12": {
+        "high": "Michigan",
+        "low": "12-seed",
+        "seed": 5,
+        "zScore": 0.71,
+        "barthag": 0.9166
+      },
+      "4_13": {
+        "high": "Texas A&M",
+        "low": "13-seed",
+        "seed": 4,
+        "zScore": -1.63,
+        "barthag": 0.9165
+      },
+      "3_14": {
+        "high": "Iowa St",
+        "low": "14-seed",
+        "seed": 3,
+        "zScore": 0.38,
+        "barthag": 0.9441
+      },
+      "2_15": {
+        "high": "Michigan St",
+        "low": "15-seed",
+        "seed": 2,
+        "zScore": -0.61,
+        "barthag": 0.9399
+      },
+      "1_16": {
+        "high": "Auburn",
+        "low": "16-seed",
+        "seed": 1,
+        "zScore": -0.62,
+        "barthag": 0.9746
+      }
     },
     "West": {
-      "8_9": {"high": "UConn", "low": "9-seed", "seed": 8, "zScore": -1.14, "barthag": 0.8841},
-      "7_10": {"high": "Arkansas", "low": "10-seed", "seed": 7, "zScore": -1.19, "barthag": 0.8815},
-      "6_11": {"high": "Mizzou", "low": "11-seed", "seed": 6, "zScore": -0.09, "barthag": 0.9247},
-      "5_12": {"high": "Memphis", "low": "12-seed", "seed": 5, "zScore": -1.72, "barthag": 0.8015},
-      "4_13": {"high": "Maryland", "low": "13-seed", "seed": 4, "zScore": 0.92, "barthag": 0.9484},
-      "3_14": {"high": "Texas Tech", "low": "14-seed", "seed": 3, "zScore": 1.22, "barthag": 0.9501},
-      "2_15": {"high": "St. John's", "low": "15-seed", "seed": 2, "zScore": -1.31, "barthag": 0.9314},
-      "1_16": {"high": "Florida", "low": "16-seed", "seed": 1, "zScore": -1.32, "barthag": 0.9709}
+      "8_9": {
+        "high": "UConn",
+        "low": "9-seed",
+        "seed": 8,
+        "zScore": -1.14,
+        "barthag": 0.8841
+      },
+      "7_10": {
+        "high": "Arkansas",
+        "low": "10-seed",
+        "seed": 7,
+        "zScore": -1.19,
+        "barthag": 0.8815
+      },
+      "6_11": {
+        "high": "Mizzou",
+        "low": "11-seed",
+        "seed": 6,
+        "zScore": -0.09,
+        "barthag": 0.9247
+      },
+      "5_12": {
+        "high": "Memphis",
+        "low": "12-seed",
+        "seed": 5,
+        "zScore": -1.72,
+        "barthag": 0.8015
+      },
+      "4_13": {
+        "high": "Maryland",
+        "low": "13-seed",
+        "seed": 4,
+        "zScore": 0.92,
+        "barthag": 0.9484
+      },
+      "3_14": {
+        "high": "Texas Tech",
+        "low": "14-seed",
+        "seed": 3,
+        "zScore": 1.22,
+        "barthag": 0.9501
+      },
+      "2_15": {
+        "high": "St. John's",
+        "low": "15-seed",
+        "seed": 2,
+        "zScore": -1.31,
+        "barthag": 0.9314
+      },
+      "1_16": {
+        "high": "Florida",
+        "low": "16-seed",
+        "seed": 1,
+        "zScore": -1.32,
+        "barthag": 0.9709
+      }
     },
     "Midwest": {
-      "8_9": {"high": "Gonzaga", "low": "9-seed", "seed": 8, "zScore": 1.54, "barthag": 0.9494},
-      "7_10": {"high": "UCLA", "low": "10-seed", "seed": 7, "zScore": 1.35, "barthag": 0.9288},
-      "6_11": {"high": "Illinois", "low": "11-seed", "seed": 6, "zScore": -0.07, "barthag": 0.9248},
-      "5_12": {"high": "Clemson", "low": "12-seed", "seed": 5, "zScore": 0.65, "barthag": 0.9137},
-      "4_13": {"high": "Purdue", "low": "13-seed", "seed": 4, "zScore": -0.02, "barthag": 0.9366},
-      "3_14": {"high": "Kentucky", "low": "14-seed", "seed": 3, "zScore": -1.53, "barthag": 0.9305},
-      "2_15": {"high": "Tennessee", "low": "15-seed", "seed": 2, "zScore": 0.75, "barthag": 0.9563},
-      "1_16": {"high": "Houston", "low": "16-seed", "seed": 1, "zScore": 1.07, "barthag": 0.9836}
+      "8_9": {
+        "high": "Gonzaga",
+        "low": "9-seed",
+        "seed": 8,
+        "zScore": 1.54,
+        "barthag": 0.9494
+      },
+      "7_10": {
+        "high": "UCLA",
+        "low": "10-seed",
+        "seed": 7,
+        "zScore": 1.35,
+        "barthag": 0.9288
+      },
+      "6_11": {
+        "high": "Illinois",
+        "low": "11-seed",
+        "seed": 6,
+        "zScore": -0.07,
+        "barthag": 0.9248
+      },
+      "5_12": {
+        "high": "Clemson",
+        "low": "12-seed",
+        "seed": 5,
+        "zScore": 0.65,
+        "barthag": 0.9137
+      },
+      "4_13": {
+        "high": "Purdue",
+        "low": "13-seed",
+        "seed": 4,
+        "zScore": -0.02,
+        "barthag": 0.9366
+      },
+      "3_14": {
+        "high": "Kentucky",
+        "low": "14-seed",
+        "seed": 3,
+        "zScore": -1.53,
+        "barthag": 0.9305
+      },
+      "2_15": {
+        "high": "Tennessee",
+        "low": "15-seed",
+        "seed": 2,
+        "zScore": 0.75,
+        "barthag": 0.9563
+      },
+      "1_16": {
+        "high": "Houston",
+        "low": "16-seed",
+        "seed": 1,
+        "zScore": 1.07,
+        "barthag": 0.9836
+      }
     }
   }
 }
