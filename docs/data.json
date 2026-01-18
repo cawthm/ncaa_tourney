@@ -98,97 +98,97 @@
         "team": "Duke",
         "barthag": 0.9824,
         "adjEV": 17.36,
-        "naiveEV": 11.76
+        "naiveEV": 8.75
       },
       "2": {
         "team": "Alabama",
         "barthag": 0.9612,
         "adjEV": 8.07,
-        "naiveEV": 7.12
+        "naiveEV": 4.73
       },
       "3": {
         "team": "Wisconsin",
         "barthag": 0.941,
         "adjEV": 4.46,
-        "naiveEV": 4.62
+        "naiveEV": 2.85
       },
       "4": {
         "team": "Arizona",
         "barthag": 0.9459,
         "adjEV": 4.9,
-        "naiveEV": 3.87
+        "naiveEV": 2.3
       },
       "5": {
         "team": "Oregon",
         "barthag": 0.8998,
         "adjEV": 1.78,
-        "naiveEV": 2.78
+        "naiveEV": 1.4
       },
       "6": {
         "team": "BYU",
         "barthag": 0.9373,
         "adjEV": 3.89,
-        "naiveEV": 2.41
+        "naiveEV": 1.19
       },
       "7": {
         "team": "St. Mary's",
         "barthag": 0.9137,
         "adjEV": 2.19,
-        "naiveEV": 1.79
+        "naiveEV": 0.97
       },
       "8": {
         "team": "Baylor",
         "barthag": 0.899,
         "adjEV": 1.25,
-        "naiveEV": 1.66
+        "naiveEV": 0.67
       },
       "9": {
         "team": "9-seed",
         "barthag": 0.76,
         "adjEV": 0.17,
-        "naiveEV": 1.42
+        "naiveEV": 0.6
       },
       "10": {
         "team": "10-seed",
         "barthag": 0.74,
         "adjEV": 0.2,
-        "naiveEV": 1.27
+        "naiveEV": 0.51
       },
       "11": {
         "team": "11-seed",
         "barthag": 0.72,
         "adjEV": 0.18,
-        "naiveEV": 1.39
+        "naiveEV": 0.59
       },
       "12": {
         "team": "12-seed",
         "barthag": 0.7,
         "adjEV": 0.18,
-        "naiveEV": 0.8
+        "naiveEV": 0.32
       },
       "13": {
         "team": "13-seed",
         "barthag": 0.68,
         "adjEV": 0.15,
-        "naiveEV": 0.34
+        "naiveEV": 0.1
       },
       "14": {
         "team": "14-seed",
         "barthag": 0.65,
         "adjEV": 0.11,
-        "naiveEV": 0.25
+        "naiveEV": 0.08
       },
       "15": {
         "team": "15-seed",
         "barthag": 0.62,
         "adjEV": 0.08,
-        "naiveEV": 0.16
+        "naiveEV": 0.02
       },
       "16": {
         "team": "16-seed",
         "barthag": 0.55,
         "adjEV": 0.03,
-        "naiveEV": 0.02
+        "naiveEV": 0
       }
     },
     "South": {
@@ -196,97 +196,97 @@
         "team": "Auburn",
         "barthag": 0.9746,
         "adjEV": 14.36,
-        "naiveEV": 11.76
+        "naiveEV": 8.75
       },
       "2": {
         "team": "Michigan St",
         "barthag": 0.9399,
         "adjEV": 5.91,
-        "naiveEV": 7.12
+        "naiveEV": 4.73
       },
       "3": {
         "team": "Iowa St",
         "barthag": 0.9441,
         "adjEV": 6.16,
-        "naiveEV": 4.62
+        "naiveEV": 2.85
       },
       "4": {
         "team": "Texas A&M",
         "barthag": 0.9165,
         "adjEV": 3.23,
-        "naiveEV": 3.87
+        "naiveEV": 2.3
       },
       "5": {
         "team": "Michigan",
         "barthag": 0.9166,
         "adjEV": 3.19,
-        "naiveEV": 2.78
+        "naiveEV": 1.4
       },
       "6": {
         "team": "Ole Miss",
         "barthag": 0.9146,
         "adjEV": 3.03,
-        "naiveEV": 2.41
+        "naiveEV": 1.19
       },
       "7": {
         "team": "Marquette",
         "barthag": 0.8909,
         "adjEV": 2.08,
-        "naiveEV": 1.79
+        "naiveEV": 0.97
       },
       "8": {
         "team": "Louisville",
         "barthag": 0.9151,
         "adjEV": 2.29,
-        "naiveEV": 1.66
+        "naiveEV": 0.67
       },
       "9": {
         "team": "9-seed",
         "barthag": 0.76,
         "adjEV": 0.21,
-        "naiveEV": 1.42
+        "naiveEV": 0.6
       },
       "10": {
         "team": "10-seed",
         "barthag": 0.74,
         "adjEV": 0.32,
-        "naiveEV": 1.27
+        "naiveEV": 0.51
       },
       "11": {
         "team": "11-seed",
         "barthag": 0.72,
         "adjEV": 0.24,
-        "naiveEV": 1.39
+        "naiveEV": 0.59
       },
       "12": {
         "team": "12-seed",
         "barthag": 0.7,
         "adjEV": 0.22,
-        "naiveEV": 0.8
+        "naiveEV": 0.32
       },
       "13": {
         "team": "13-seed",
         "barthag": 0.68,
         "adjEV": 0.2,
-        "naiveEV": 0.34
+        "naiveEV": 0.1
       },
       "14": {
         "team": "14-seed",
         "barthag": 0.65,
         "adjEV": 0.14,
-        "naiveEV": 0.25
+        "naiveEV": 0.08
       },
       "15": {
         "team": "15-seed",
         "barthag": 0.62,
         "adjEV": 0.13,
-        "naiveEV": 0.16
+        "naiveEV": 0.02
       },
       "16": {
         "team": "16-seed",
         "barthag": 0.55,
         "adjEV": 0.04,
-        "naiveEV": 0.02
+        "naiveEV": 0
       }
     },
     "West": {
@@ -294,97 +294,97 @@
         "team": "Florida",
         "barthag": 0.9709,
         "adjEV": 13.3,
-        "naiveEV": 11.76
+        "naiveEV": 8.75
       },
       "2": {
         "team": "St. John's",
         "barthag": 0.9314,
         "adjEV": 5.13,
-        "naiveEV": 7.12
+        "naiveEV": 4.73
       },
       "3": {
         "team": "Texas Tech",
         "barthag": 0.9501,
         "adjEV": 7.06,
-        "naiveEV": 4.62
+        "naiveEV": 2.85
       },
       "4": {
         "team": "Maryland",
         "barthag": 0.9484,
         "adjEV": 7.24,
-        "naiveEV": 3.87
+        "naiveEV": 2.3
       },
       "5": {
         "team": "Memphis",
         "barthag": 0.8015,
         "adjEV": 0.74,
-        "naiveEV": 2.78
+        "naiveEV": 1.4
       },
       "6": {
         "team": "Mizzou",
         "barthag": 0.9247,
         "adjEV": 3.63,
-        "naiveEV": 2.41
+        "naiveEV": 1.19
       },
       "7": {
         "team": "Arkansas",
         "barthag": 0.8815,
         "adjEV": 1.92,
-        "naiveEV": 1.79
+        "naiveEV": 0.97
       },
       "8": {
         "team": "UConn",
         "barthag": 0.8841,
         "adjEV": 1.47,
-        "naiveEV": 1.66
+        "naiveEV": 0.67
       },
       "9": {
         "team": "9-seed",
         "barthag": 0.76,
         "adjEV": 0.28,
-        "naiveEV": 1.42
+        "naiveEV": 0.6
       },
       "10": {
         "team": "10-seed",
         "barthag": 0.74,
         "adjEV": 0.36,
-        "naiveEV": 1.27
+        "naiveEV": 0.51
       },
       "11": {
         "team": "11-seed",
         "barthag": 0.72,
         "adjEV": 0.22,
-        "naiveEV": 1.39
+        "naiveEV": 0.59
       },
       "12": {
         "team": "12-seed",
         "barthag": 0.7,
         "adjEV": 0.29,
-        "naiveEV": 0.8
+        "naiveEV": 0.32
       },
       "13": {
         "team": "13-seed",
         "barthag": 0.68,
         "adjEV": 0.23,
-        "naiveEV": 0.34
+        "naiveEV": 0.1
       },
       "14": {
         "team": "14-seed",
         "barthag": 0.65,
         "adjEV": 0.13,
-        "naiveEV": 0.25
+        "naiveEV": 0.08
       },
       "15": {
         "team": "15-seed",
         "barthag": 0.62,
         "adjEV": 0.15,
-        "naiveEV": 0.16
+        "naiveEV": 0.02
       },
       "16": {
         "team": "16-seed",
         "barthag": 0.55,
         "adjEV": 0.06,
-        "naiveEV": 0.02
+        "naiveEV": 0
       }
     },
     "Midwest": {
@@ -392,97 +392,97 @@
         "team": "Houston",
         "barthag": 0.9836,
         "adjEV": 16.83,
-        "naiveEV": 11.76
+        "naiveEV": 8.75
       },
       "2": {
         "team": "Tennessee",
         "barthag": 0.9563,
         "adjEV": 7.06,
-        "naiveEV": 7.12
+        "naiveEV": 4.73
       },
       "3": {
         "team": "Kentucky",
         "barthag": 0.9305,
         "adjEV": 3.86,
-        "naiveEV": 4.62
+        "naiveEV": 2.85
       },
       "4": {
         "team": "Purdue",
         "barthag": 0.9366,
         "adjEV": 3.81,
-        "naiveEV": 3.87
+        "naiveEV": 2.3
       },
       "5": {
         "team": "Clemson",
         "barthag": 0.9137,
         "adjEV": 2.27,
-        "naiveEV": 2.78
+        "naiveEV": 1.4
       },
       "6": {
         "team": "Illinois",
         "barthag": 0.9248,
         "adjEV": 3.25,
-        "naiveEV": 2.41
+        "naiveEV": 1.19
       },
       "7": {
         "team": "UCLA",
         "barthag": 0.9288,
         "adjEV": 3.15,
-        "naiveEV": 1.79
+        "naiveEV": 0.97
       },
       "8": {
         "team": "Gonzaga",
         "barthag": 0.9494,
         "adjEV": 3.59,
-        "naiveEV": 1.66
+        "naiveEV": 0.67
       },
       "9": {
         "team": "9-seed",
         "barthag": 0.76,
         "adjEV": 0.11,
-        "naiveEV": 1.42
+        "naiveEV": 0.6
       },
       "10": {
         "team": "10-seed",
         "barthag": 0.74,
         "adjEV": 0.2,
-        "naiveEV": 1.27
+        "naiveEV": 0.51
       },
       "11": {
         "team": "11-seed",
         "barthag": 0.72,
         "adjEV": 0.22,
-        "naiveEV": 1.39
+        "naiveEV": 0.59
       },
       "12": {
         "team": "12-seed",
         "barthag": 0.7,
         "adjEV": 0.17,
-        "naiveEV": 0.8
+        "naiveEV": 0.32
       },
       "13": {
         "team": "13-seed",
         "barthag": 0.68,
         "adjEV": 0.15,
-        "naiveEV": 0.34
+        "naiveEV": 0.1
       },
       "14": {
         "team": "14-seed",
         "barthag": 0.65,
         "adjEV": 0.14,
-        "naiveEV": 0.25
+        "naiveEV": 0.08
       },
       "15": {
         "team": "15-seed",
         "barthag": 0.62,
         "adjEV": 0.08,
-        "naiveEV": 0.16
+        "naiveEV": 0.02
       },
       "16": {
         "team": "16-seed",
         "barthag": 0.55,
         "adjEV": 0.02,
-        "naiveEV": 0.02
+        "naiveEV": 0
       }
     }
   },
