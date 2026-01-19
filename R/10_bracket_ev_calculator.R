@@ -339,8 +339,9 @@ calc_region_ev <- function(region_teams, model) {
 #' Calculate EV for entire bracket
 #' @param bracket Data frame with columns: region, seed, team, barthag
 #' @param model Fitted model (optional, loads from file if not provided)
+#' @param normalize If TRUE, normalize EVs to sum to 100% (default TRUE)
 #' @return Data frame with all teams and their EVs
-calc_bracket_ev <- function(bracket, model = NULL) {
+calc_bracket_ev <- function(bracket, model = NULL, normalize = TRUE) {
   if (is.null(model)) {
     model <- load_model()
   }
@@ -351,9 +352,23 @@ calc_bracket_ev <- function(bracket, model = NULL) {
     group_modify(~ calc_region_ev(.x, model)) %>%
     ungroup()
 
-  # Verify EVs sum to ~100%
-  total_ev <- sum(results$ev)
-  message(sprintf("Total EV across all teams: %.2f%% (should be ~100%%)", total_ev * 100))
+  # Check raw total before normalization
+ raw_total_ev <- sum(results$ev)
+  message(sprintf("Raw total EV: %.2f%% (before normalization)", raw_total_ev * 100))
+
+  # Normalize EVs to sum to 100%
+  # This corrects for the approximation error in F4/Championship calculations
+  if (normalize && raw_total_ev > 0) {
+    normalization_factor <- 1 / raw_total_ev
+    results <- results %>%
+      mutate(
+        ev_raw = ev,
+        ev = ev * normalization_factor,
+        p_champ = p_champ * normalization_factor,
+        p_f4 = p_f4 * normalization_factor
+      )
+    message(sprintf("Normalized total EV: %.2f%%", sum(results$ev) * 100))
+  }
 
   results
 }
